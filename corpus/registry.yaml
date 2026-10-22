@@ -1,0 +1,409 @@
+# AOC-DFO corpus registry
+# Spec: AOC-DFO-REQ v1.0 Req 1.1, 1.4; AOC-DFO-DES v1.0 §2
+# Generated: 2026-09-04. Verified against doctrine.af.mil Smart Book (4 Jul 2026),
+# jcs.mil doctrine status (25 Mar 2025), USMCU JADO libguide (3 Aug 2026),
+# e-publishing.af.mil, niem.gov / OASIS NIEMOpen, mimworld.org.
+#
+# tier values:
+#   1a  public web, no login          (fully citable, ingest directly)
+#   1b  UNCLASSIFIED but CAC-gated    (JEL+/JDEIS, WMA portal; citable if obtained)
+#   2   distribution-controlled / CUI (never in public repo; corpus-controlled/ only)
+# status values: verified | verify-date | superseded | unavailable
+#
+# Design note: current joint pubs are 1b (JEL+ requires CAC). Public 1a copies
+# are typically the *previous* edition (FAS/DTIC mirrors). Registry lists both so
+# the build can run on 1a and be upgraded to 1b without re-anchoring.
+
+registry_version: 1
+default_handling: UNCLASSIFIED
+
+sources:
+
+  # ---------------------------------------------------------------- USAF doctrine
+  - id: AFDP-3-0.1
+    title: "AFDP 3-0.1, Command and Control"
+    issuer: LeMay Center
+    edition: "22 Jan 2025"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/Portals/61/documents/AFDP_3-0_1/AFDP3-0.1CommandandControl.pdf
+    role: primary — C2 function, AOC as C2 system element, CC-DC-DE, C2 process
+    notes: "Supersedes AFDP 3-30 (7 Jan 2020). Spec references to 'AFDP 3-30' must be read as 3-0.1."
+
+  - id: AFDP-3-30-LEGACY
+    title: "AFDP 3-30, Command and Control (Appendix B: The Air Operations Center)"
+    issuer: LeMay Center
+    edition: "7 Jan 2020"
+    tier: 1a
+    status: superseded
+    url: https://www.doctrine.af.mil/Portals/61/documents/Afdp_3-30/3-30-D70-C2-Appendix-AOC.pdf
+    role: secondary — legacy AOC division/team structure; use only where 3-0.1 is silent, mark superseded in provenance
+    notes: "Retain for AOC structural detail; flag every assertion sourced here with dfo:supersededBy AFDP-3-0.1."
+
+  - id: AFDP-3-0
+    title: "AFDP 3-0, Operations"
+    issuer: LeMay Center
+    edition: "22 Jan 2025"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/Doctrine-Publications/AFDP-3-0-Operations/
+    role: force presentation, COMAFFOR/JFACC roles
+
+  - id: AFDP-3-60
+    title: "AFDP 3-60, Targeting"
+    issuer: LeMay Center
+    edition: "1 May 2026"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/
+    role: primary — six-stage air tasking cycle, deliberate/dynamic targeting, JIPTL/JTL products
+    notes: "Air tasking cycle stages per this edition: (1) objectives/effects/guidance, (2) target development, (3) weaponeering & allocation, (4) ATO production & dissemination, (5) execution planning & force execution, (6) assessment. Locate PDF under /Portals/61/documents/AFDP_3-60/."
+
+  - id: AFDP-3-01
+    title: "AFDP 3-01, Counterair Operations"
+    issuer: LeMay Center
+    edition: "15 Jun 2023"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/Doctrine-Publications/AFDP-3-01-Counterair-Ops/
+    role: AADC/ACA roles, AOC as senior TACS element, IAMD flows
+    notes: "Spec text said 'AFDP 3-1'; correct designation is 3-01."
+
+  - id: AFDP-3-52
+    title: "AFDP 3-52, Airspace Control"
+    issuer: LeMay Center
+    edition: "26 Sep 2025"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/Doctrine-Publications/AFDP-3-52-Airspace-Control/
+    role: ACP/ACO products, ACM types (domain layer), TACS airspace flows
+
+  - id: AFDP-2-0
+    title: "AFDP 2-0, Intelligence"
+    issuer: LeMay Center
+    edition: "1 May 2026"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/
+    role: ISR division flows, PCPADE process, collection tasking
+
+  - id: AFDP-3-85
+    title: "AFDP 3-85, Electromagnetic Spectrum Operations"
+    issuer: LeMay Center
+    edition: "14 Dec 2023"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/
+    role: Information Warfare Team in AOC; EMS flows to JEMSO cell
+
+  - id: AFDP-3-36
+    title: "AFDP 3-36, Air Mobility Operations"
+    issuer: LeMay Center
+    edition: "24 Jun 2024"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/
+    role: Air Mobility Division flows, airlift/AR tasking
+
+  - id: AFDP-5-0
+    title: "AFDP 5-0, Planning"
+    issuer: LeMay Center
+    edition: "22 Jan 2025"
+    tier: 1a
+    status: verified
+    url: https://www.doctrine.af.mil/
+    role: AFPP outputs (JAOP/AOD lineage), plans-and-orders products
+
+  - id: AFMAN-13-1AOCV3
+    title: "AFMAN 13-1AOC Vol 3, Operational Procedures—Air Operations Center (AOC)/Operations Center (OC)"
+    issuer: ACC/A3C (e-Publishing)
+    edition: "25 Jun 2024"
+    tier: 1a
+    status: verified
+    url: https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-1aocv3/afman13-1aocv3_.pdf
+    role: PRIMARY for internal division/team flows and products — 185 pp, no releasability restrictions
+    notes: "Supersedes DAFMAN 13-1AOC V3 (18 Dec 2020). Likely the single richest Tier 1 source for Phase 2/7. Ingest first."
+
+  - id: AFI-13-114V3
+    title: "AFI 13-114 Vol 3, Air Support Operations Center (ASOC) Operations Procedures"
+    issuer: ACC/A3Y (e-Publishing)
+    edition: "1 Jun 2009"
+    tier: 1a
+    status: verify-date
+    url: https://static.e-publishing.af.mil/production/1/af_a3_5/publication/afi13-114v3/afi13-114v3.pdf
+    role: ASOC↔AOC flows (AIRSUPREQ, CAS tasking); TACS node
+    notes: "Check e-publishing for a newer edition before ingest."
+
+  - id: AFTTP-3-3.AOC
+    title: "AFTTP 3-3.AOC, Combat Fundamentals—Air Operations Center"
+    issuer: 561 JTS / ACC
+    edition: unknown
+    tier: 2
+    status: unavailable
+    url: null
+    role: tactical AOC procedures; message-level detail
+    notes: "Referenced by AFDP 3-0.1 as authoritative detail. Not on public e-Publishing; treat as CUI until proven otherwise."
+
+  # ---------------------------------------------------------------- Joint doctrine
+  # Current editions live on JEL+ (CAC). Previous editions are public via FAS/DTIC.
+  - id: JP-3-30
+    title: "JP 3-30, Joint Air Operations"
+    issuer: Joint Staff J-7
+    edition: "2025 (current, JEL+)"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/new_pubs/jp3_30.pdf
+    role: primary — JFACC, JAOC, joint air tasking cycle, TACS/AAGS, JACCE, products (JAOP, AOD, ATO, ACO, SPINS)
+    notes: "Exact 2025 signature date not visible from public sources; confirm on JEL+."
+
+  - id: JP-3-30-2019
+    title: "JP 3-30, Joint Air Operations (previous edition)"
+    issuer: Joint Staff J-7
+    edition: "25 Jul 2019"
+    tier: 1a
+    status: superseded
+    url: https://irp.fas.org/doddir/dod/jp3_30.pdf
+    role: public fallback for JP-3-30 until 1b copy obtained
+    notes: "Anchor paragraph numbers will differ from 2025 edition; re-anchor on upgrade."
+
+  - id: JP-3-60
+    title: "JP 3-60, Joint Targeting"
+    issuer: Joint Staff J-7
+    edition: "2024 (JEL+)"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/new_pubs/jp3_60.pdf
+    role: joint targeting cycle, target nomination/JTL/RTL/NSL products, BDA
+
+  - id: JP-3-09
+    title: "JP 3-09, Joint Fires"
+    issuer: Joint Staff J-7
+    edition: "2025 (JEL+)"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/new_pubs/jp3_09.pdf
+    role: fire support coordination, FSCM, joint fires↔air tasking interfaces
+    notes: "Retitled from 'Joint Fire Support' to 'Joint Fires' in this revision."
+
+  - id: JP-3-52
+    title: "JP 3-52, Joint Airspace Control"
+    issuer: Joint Staff J-7
+    edition: "2022 (JEL+)"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/new_pubs/jp3_52.pdf
+    role: ACA, ACP/ACO, ACM definitions (domain layer)
+
+  - id: JP-3-01
+    title: "JP 3-01, Countering Air and Missile Threats (w/Ch 1)"
+    issuer: Joint Staff J-7
+    edition: "2024 (JEL+, jp3_01ch1)"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/new_pubs/jp3_01ch1.pdf
+    role: AADC, AADP, IAMD flows
+
+  - id: JP-2-0
+    title: "JP 2-0, Joint Intelligence (w/Ch 1)"
+    issuer: Joint Staff J-7
+    edition: "2024 (JEL+, jp2_0ch1)"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/new_pubs/jp2_0ch1.pdf
+    role: intelligence process, collection management flows
+    notes: "JP 2-01 is no longer in the joint hierarchy; JIPOE is now a Joint Guide (jg_jipoe.pdf). Replace spec references to JP 2-01 with JP 2-0 + JIPOE guide."
+
+  - id: JG-JIPOE
+    title: "Joint Guide for Joint Intelligence Preparation of the Operational Environment"
+    issuer: Joint Staff J-7
+    edition: "2022"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/JDN_pdf/jg_jipoe.pdf
+    role: JIPOE products feeding target development
+
+  - id: JP-6-0
+    title: "JP 6-0, Joint Communications"
+    issuer: Joint Staff J-7
+    edition: "2023 (JEL+)"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/new_pubs/jp6_0.pdf
+    role: transport layer — data link, network, interoperability standards references
+
+  - id: DOD-DICTIONARY
+    title: "DOD Dictionary of Military and Associated Terms"
+    issuer: Joint Staff J-7
+    edition: "Dec 2025"
+    tier: 1b
+    status: verify-date
+    url: https://jdeis.js.mil/jdeis/new_pubs/dictionary.pdf
+    role: definition text for rdfs:comment on doctrine-layer classes
+
+  # ---------------------------------------------------------------- Schemas / models
+  - id: NIEM-6.0
+    title: "NIEM Model 6.0 (OASIS NIEMOpen), incl. Military Operations (MilOps) domain"
+    issuer: OASIS NIEMOpen / NIEM Management Office
+    edition: "6.0 OS"
+    tier: 1a
+    status: verified
+    url: https://docs.oasis-open.org/niemopen/niem-model/v6.0/os/xsd/domains/
+    role: PRIMARY canonical element vocabulary (Req 5.1); XSD ingest with element-path anchors
+    notes: "Public MilOps content covers JCA-derived exchanges. Non-public 'MOMS' namespace (DoD Distribution C) is on the WMA portal NIEM Restricted Repository — CAC/PIV; register as NIEM-MOMS tier 2 if obtained. NIEM cited in CJADC2 RA v3.0 and RD v1.0."
+
+  - id: MIM
+    title: "MIP Information Model (MIM) — MIP Baseline 4"
+    issuer: Multilateral Interoperability Programme
+    edition: "current annual increment (2020+)"
+    tier: 1a
+    status: verify-date
+    url: https://www.mimworld.org/portal/projects/welcome/wiki/Introduction
+    role: SECONDARY canonical vocabulary; object-oriented successor to JC3IEDM with public tooling
+    notes: "Design correction: prefer MIM over JC3IEDM 3.1.4 as the C2 reference model. JC3IEDM remains STANAG 5525; MIM proposed as STANAG 5643. Keep JC3IEDM only for legacy alignment."
+
+  - id: JC3IEDM-3.1.4
+    title: "JC3IEDM 3.1.4 (STANAG 5525) — MIP Baseline 3.1"
+    issuer: MIP / NATO
+    edition: "3.1.4"
+    tier: 1a
+    status: verify-date
+    url: null
+    role: legacy alignment only
+    notes: "Locate current public distribution point (MIP public document library); do not ingest unless MIM lacks a needed concept."
+
+  - id: C2CORE
+    title: "C2 Core / UCore (archival)"
+    issuer: DoD (historical)
+    edition: "C2 Core 2.x / UCore 2.0"
+    tier: 1a
+    status: verify-date
+    url: null
+    role: archival; USMTF-derived element names useful as Tier 2 proxies
+    notes: "Low priority. Only ingest if NIEM/MIM leave USMTF set names unmapped."
+
+  # ---------------------------------------------------------------- Message standards
+  - id: MIL-STD-6040
+    title: "MIL-STD-6040, US Message Text Format (USMTF)"
+    issuer: DISA
+    edition: unknown
+    tier: 2
+    status: unavailable
+    url: null
+    role: USMTF set/field definitions (ATO, ACO, AIRSUPREQ, MISREP, TACREP, ...)
+
+  - id: MIL-STD-6016
+    title: "MIL-STD-6016, Tactical Data Link (TDL) 16 Message Standard"
+    issuer: DISA / JITC
+    edition: unknown
+    tier: 2
+    status: unavailable
+    url: null
+    role: J-series message/DFI/DUI definitions
+
+  - id: MIL-STD-6017
+    title: "MIL-STD-6017, Variable Message Format (VMF)"
+    issuer: DISA
+    edition: unknown
+    tier: 2
+    status: unavailable
+    url: null
+    role: K-series message definitions
+
+  - id: MTF-XML
+    title: "USMTF XML (MTF-XML) schemas"
+    issuer: DISA
+    edition: unknown
+    tier: 2
+    status: unavailable
+    url: null
+    role: XML carrier for USMTF; would give element-path anchors directly
+
+  - id: LINK16-PUBLIC
+    title: "Link 16 unclassified descriptive literature (JITC/DISA overviews, NATO STANAG 5516 public summaries)"
+    issuer: various
+    edition: n/a
+    tier: 1a
+    status: verify-date
+    url: null
+    role: J-series message *catalog* (names, purposes) without field-level detail
+    notes: "Sufficient for Phase 3 catalog; insufficient for Phase 4 elements."
+
+  # ---------------------------------------------------------------- Systems
+  - id: SYS-KRADOS
+    title: "Kessel Run All-Domain Operations Suite (KRADOS) — AOC Block 20"
+    issuer: AFLCMC Detachment 12 (Kessel Run), OpsC2 product line
+    edition: "n/a (continuously delivered; MVCR1 2022)"
+    tier: 1a
+    status: verified
+    url: https://kesselrun.af.mil/product-lines/OpsC2.html
+    role: transport/implementation layer; system of record successor to TBMCS for ATO/ACO production
+    notes: >
+      KRADOS is the backbone of AOC Block 20. Apps connected by common data streams on hybrid cloud.
+      First operational ATO built in KRADOS at 609 AOC, May 2021; 609 AOC fully off TBMCS and MAAP-TK
+      after MVCR1 (Nov 2022). Being scaled to INDOPACOM AOCs (2023+). Nine applications delivered Dec 2020.
+    components:
+      - {name: Slapshot,       function: "Builds the Master Air Attack Plan (MAAP); used by COD",          ato_stage: "3 Weaponeering & allocation",     product: MAAP}
+      - {name: Triton,         function: "Consumes other apps' data to generate the Air Tasking Order",      ato_stage: "4 ATO production & dissemination", product: ATO}
+      - {name: Spacer,         function: "Airspace management; coordinates/deconflicts airspace in the AOR", ato_stage: "4 ATO production & dissemination", product: ACO}
+      - {name: Jigsaw,         function: "Tanker/air refueling planning",                                   ato_stage: "3-4",                              product: "AR plan (MAAP/ATO input)"}
+      - {name: MaiTai,         function: "Asset availability visibility for commanders",                    ato_stage: "3",                                product: "force availability / allocation input"}
+      - {name: Rebel Alliance, function: "Event handling; communicates data between KRADOS apps",           ato_stage: "all",                              product: null, note: "internal transport, not a user-facing flow"}
+      - {name: KRID,           function: "Authentication for the KRADOS suite",                             ato_stage: "n/a",                              product: null, note: "not a data flow; model as access control on the system"}
+      - {name: Skyhook,        function: unknown,                                                           ato_stage: unknown,                            product: null, note: "named in the 9-app list; no public description found"}
+      - {name: Direct,         function: unknown,                                                           ato_stage: unknown,                            product: null, note: "named in the 9-app list; no public description found"}
+    provenance:
+      - {doc: "kesselrun.af.mil OpsC2 product line page", claim: "app descriptions for Slapshot, Triton, Spacer, KRID, Rebel Alliance; TBMCS as system of record"}
+      - {doc: "kesselrun.af.mil news, 'Kessel Run Deploys KRADOS' / 'KR-KRADOS-OP' (May 2021)", claim: "nine apps delivered Dec 2020; first operational MAAP/ATO at 609 AOC"}
+      - {doc: "GovCIO Media (Dec 2024)", claim: "MVCR1 2022; 609 AOC off TBMCS and MAAP-TK; MaiTai description"}
+      - {doc: "DefenseScoop (3 Aug 2023)", claim: "Triton ATO consolidation; INDOPACOM scaling"}
+      - {doc: "Carahsoft Kessel Run page", claim: "full nine-app name list incl. Skyhook and Direct"}
+
+  - id: SYS-TBMCS
+    title: "Theater Battle Management Core Systems (TBMCS) — AOC Block 10.1"
+    issuer: AFLCMC / Kessel Run OpsC2 (sustainment); AppTX migrating 10.1 apps to cloud
+    edition: "Block 10.1"
+    tier: 1a
+    status: verified
+    url: https://kesselrun.af.mil/product-lines/OpsC2.html
+    role: legacy transport/implementation layer
+    notes: >
+      Per Kessel Run: system of record for force-level theater battle management and ATO/ACO generation,
+      dissemination, and execution; automates the CAOC portion of TACS. Still the baseline at AOCs not yet
+      on KRADOS. MAAP Toolkit (MAAP-TK) was the companion MAAP tool, replaced by Slapshot.
+
+  - id: SYS-JADOCS
+    title: "Joint Automated Deep Operations Coordination System — public fact sheets"
+    issuer: US Army / PEO C3T
+    edition: n/a
+    tier: 1a
+    status: verify-date
+    url: null
+    role: targeting/fires coordination transport
+
+  - id: SYS-GCCS-J
+    title: "GCCS-J — public fact sheets"
+    issuer: DISA
+    edition: n/a
+    tier: 1a
+    status: verify-date
+    url: null
+    role: COP / OTH-Gold transport
+
+  - id: SYS-DCGS
+    title: "AF DCGS — public fact sheets"
+    issuer: ACC
+    edition: n/a
+    tier: 1a
+    status: verify-date
+    url: null
+    role: ISR PED node; product flows into AOC ISRD
+
+# ------------------------------------------------------------------ Findings for Amendment 001
+findings:
+  - "AFDP 3-30 superseded by AFDP 3-0.1 (22 Jan 2025). Update REQ 2.1, DES §1/§2.1/§3.1."
+  - "'AFDP 3-1' should be AFDP 3-01. Update DES §2.1."
+  - "JP 2-01 removed from joint hierarchy; use JP 2-0 (w/Ch 1, 2024) + Joint Guide JIPOE (2022). Update DES §2.1."
+  - "Current joint pubs are CAC-gated (JEL+). Introduce tier 1b; public fallbacks are previous editions. Update REQ 1 glossary and DES §2."
+  - "AFMAN 13-1AOC V3 (25 Jun 2024) is publicly releasable and is the richest Tier 1 source for internal AOC flows. Elevate to primary in DES §2.1 and tasks 2.1/7.2."
+  - "Prefer MIP Information Model (MIM) over JC3IEDM as secondary canonical vocabulary (DES D-1)."
+  - "NIEM 6.0 is now an OASIS Open Project release; MilOps public XSDs at docs.oasis-open.org. Restricted MOMS namespace on WMA portal (CAC)."
