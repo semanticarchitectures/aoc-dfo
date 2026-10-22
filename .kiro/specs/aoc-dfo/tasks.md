@@ -20,7 +20,7 @@ Tasks changed or added by Amendment 001 are marked *(A001)*.
 - [x] **0.3** Vendor BFO and CCO at the shared pin under `ontology/imports/` with `PINS.yaml` (commit, path, SHA-256, license), write `catalog-v001.xml`, and add the pin-hash and catalog-resolution checks. Write `docs/conformance.md` from the umbrella ontology rules (GMNS's conformance spec is not published; reconcile later). _Requirements: R6.1, R6.6, R6.7, NFR-4_ *(A001)*
 - [x] **0.4** Create the seven ontology module headers (six core + `aoc-align`) with IRIs, version IRIs and the `owl:imports` graph of design §8, and the `owl:imports` contract test. _Requirements: R12.2, R14.3_ *(A001)*
 - [x] **0.5** CI: pin and catalog checks, module contract, Turtle parse and canonical serialization, handling-marking grep, registry schema check, `cco:` label-map check, ROBOT reason (HermiT) and report, SHACL and CQ jobs (empty until later phases). _Requirements: R12.4, NFR-1, NFR-2, NFR-3_ *(A001)* — done 2026-10-22; SHACL and CQ jobs are placeholders until shapes/ and cq/ have content
-- [ ] **0.6** *(umbrella)* Add the repo URL to the umbrella README and portfolio, and the AOC-DFO spec to `docs/specs-index.md`. _Requirements: R12.6_ *(A001)*
+- [x] **0.6** *(umbrella)* Add the repo URL to the umbrella README and portfolio, and the AOC-DFO spec to `docs/specs-index.md`. _Requirements: R12.6_ *(A001)*
 
 ## Phase 1 — Source corpus and provenance
 
