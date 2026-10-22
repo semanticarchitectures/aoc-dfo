@@ -3,13 +3,21 @@
 A BFO/CCO ontology of the data flows into, out of and within a USAF Air Operations Center (AOC),
 built only from public sources, with every assertion cited to a source and anchor.
 
-AOC-DFO is a component of the **[Acquisition Knowledge System (AKS)](https://github.com/semanticarchitectures/acquisition-knowledge-system)**.
-In AKS it is:
+## Part of the Acquisition Knowledge System
 
-1. the reference ontology of AOC data flows;
-2. the **alignment target** for the knowledge base's acquisition ontology, so the two graphs join
-   without remapping (umbrella ADR 0005, ADR 0006);
-3. at the far horizon, the **AOC side of the interface** between unmanned mission plans and the AOC.
+AOC-DFO is a component of the [Acquisition Knowledge System (AKS)](https://github.com/semanticarchitectures/acquisition-knowledge-system),
+a demonstration of AI that speeds how the Air Force conceives, acquires, fields and operates
+capability, safely and under human authority.
+
+Its role in AKS: the BFO/CCO ontology of AOC data flows, the alignment target for the AKS
+knowledge-base ontology, and, at the far horizon, the AOC side of the interface between unmanned
+mission plans and the AOC.
+
+Cross-component decisions live in the umbrella repo. Two apply here directly:
+[ADR 0005](https://github.com/semanticarchitectures/acquisition-knowledge-system/blob/main/docs/adr/0005-one-model-many-apps.md)
+(one shared model, many apps) and
+[ADR 0006](https://github.com/semanticarchitectures/acquisition-knowledge-system/blob/main/docs/adr/0006-aoc-dfo-repo-and-shared-ontology-pins.md)
+(standalone repo; shared BFO/CCO pin).
 
 Umbrella steering and ADRs take precedence over anything in this repo. Read the umbrella's
 `.kiro/steering/` and `docs/vision.md` before changing the model.
