@@ -1,0 +1,15 @@
+AOC Data Flow Ontology (AOC-DFO)
+Copyright 2026 Semantic Architectures
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository vendors third-party ontologies, unmodified, under ontology/imports/:
+
+- Basic Formal Ontology (BFO) 2020, OWL release tag release-2024-01-29,
+  https://github.com/BFO-ontology/BFO-2020 (commit 044490fc5100ffed6df7d4d15cbc167698b6fdee).
+  Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0),
+  https://creativecommons.org/licenses/by/4.0/. BFO is the subject of ISO/IEC 21838-2:2021.
+
+- Common Core Ontologies (CCO) v2.2, CommonCoreOntologiesMerged.ttl,
+  https://github.com/CommonCoreOntology/CommonCoreOntologies (commit 0bc7d33e1bc09fd4693366119ab4e03cb0340042).
+  Copyright (c) 2017, CUBRC, Inc. Licensed under the BSD 3-Clause License; see ontology/imports/LICENSE-CCO.

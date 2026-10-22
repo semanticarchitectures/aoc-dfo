@@ -1,0 +1,30 @@
+[project]
+name = "aoc-dfo"
+version = "0.1.0"
+description = "AOC Data Flow Ontology: BFO/CCO ontology of USAF Air Operations Center data flows (AKS component)"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12,<3.13"
+authors = [{ name = "Kevin G. Kelly", email = "kevin.g.kelly@semanticarchitectures.com" }]
+dependencies = [
+    "rdflib>=7.1,<8",
+    "pyshacl>=0.30,<1",
+    "pyyaml>=6.0,<7",
+]
+
+[project.scripts]
+aoc-dfo = "aoc_dfo.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3,<9"]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aoc_dfo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

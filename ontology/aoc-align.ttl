@@ -1,0 +1,17 @@
+# AOC-DFO — public, unclassified content only (HANDLING.md).
+# Canonical Turtle: format with `uv run aoc-dfo fmt`; CI rejects other layouts.
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/aoc-dfo/aoc-align> a owl:Ontology ;
+    rdfs:label "AOC-DFO alignment"@en ;
+    dcterms:description "Alignment axioms to ENSIM, the KB ontology and GMNS. Not imported by any core module (design §3.7, R14.3)."@en ;
+    dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+    dcterms:source <https://github.com/semanticarchitectures/aoc-dfo> ;
+    dcterms:title "AOC-DFO alignment"@en ;
+    rdfs:comment "Public, unclassified content only (HANDLING.md). Upper ontologies at the AKS shared pin: BFO 2020 release-2024-01-29, CCO v2.2."@en ;
+    owl:imports <https://w3id.org/aoc-dfo/aoc-dfo> ;
+    owl:versionIRI <https://w3id.org/aoc-dfo/0.1.0/aoc-align> ;
+    owl:versionInfo "0.1.0" .

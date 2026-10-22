@@ -80,7 +80,7 @@ Reuses CCO 2.2 for Aircraft (`cco:Aircraft`), organizations (`cco:Organization`,
 ### 3.5 `aoc-flows.ttl` *(A001)*
 
 - `dfo:DataFlow` ⊑ `cco:ActOfCommunication` with `cco:has_agent` (producer node), `cco:has_recipient` (consumer node), `cco:has_input` (the message or product bearer; replaces v1.0 `dfo:bears`), `dfo:occursInStage` (air tasking cycle stage), `dfo:triggeredBy` (doctrinal condition, provenance-annotated), `dfo:viaChannel` → `dfo:CommunicationChannel` (§3.6), `dfo:viaSystem` → `dfo:C2System` (optional). Corresponds to ENSIM `Interaction`.
-- Systems: `dfo:C2System` ⊑ `cco:InformationProcessingArtifact` *(was `cco:Artifact`, absent in CCO 2.2)* with `dfo:implementsStandard`. Instances: KRADOS (AOC Block 20) and its applications as parts (Slapshot → MAAP, Triton → ATO, Spacer → ACO/airspace, Jigsaw → air refueling plan, MaiTai → asset availability); TBMCS (Block 10.1); JADOCS; GCCS-J; DCGS. KRID (authentication) and Rebel Alliance (inter-app events) are system properties, not flows. Skyhook and Direct: names only, no public function; registered as gaps.
+- Systems: `dfo:C2System` ⊑ `cco:InformationProcessingArtifact` *(v1.0 said CCO 1.x "Artifact", which CCO 2.2 does not have)* with `dfo:implementsStandard`. Instances: KRADOS (AOC Block 20) and its applications as parts (Slapshot → MAAP, Triton → ATO, Spacer → ACO/airspace, Jigsaw → air refueling plan, MaiTai → asset availability); TBMCS (Block 10.1); JADOCS; GCCS-J; DCGS. KRID (authentication) and Rebel Alliance (inter-app events) are system properties, not flows. Skyhook and Direct: names only, no public function; registered as gaps.
 - Diagram generation: SPARQL → Mermaid per stage; committed under `docs/diagrams/`.
 
 ### 3.6 `aoc-threads.ttl` — mission-thread layer *(A001, new)*

@@ -1,0 +1,17 @@
+# AOC-DFO — public, unclassified content only (HANDLING.md).
+# Canonical Turtle: format with `uv run aoc-dfo fmt`; CI rejects other layouts.
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/aoc-dfo/aoc-doctrine> a owl:Ontology ;
+    rdfs:label "AOC-DFO doctrine layer"@en ;
+    dcterms:description "C2 nodes, doctrine processes, decisions, the air tasking cycle and doctrinal products (design §3.1). ENSIM names reused."@en ;
+    dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+    dcterms:source <https://github.com/semanticarchitectures/aoc-dfo> ;
+    dcterms:title "AOC-DFO doctrine layer"@en ;
+    rdfs:comment "Public, unclassified content only (HANDLING.md). Upper ontologies at the AKS shared pin: BFO 2020 release-2024-01-29, CCO v2.2."@en ;
+    owl:imports <https://w3id.org/aoc-dfo/aoc-domain> ;
+    owl:versionIRI <https://w3id.org/aoc-dfo/0.1.0/aoc-doctrine> ;
+    owl:versionInfo "0.1.0" .

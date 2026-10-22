@@ -1,0 +1,18 @@
+# AOC-DFO — public, unclassified content only (HANDLING.md).
+# Canonical Turtle: format with `uv run aoc-dfo fmt`; CI rejects other layouts.
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/aoc-dfo/aoc-domain> a owl:Ontology ;
+    rdfs:label "AOC-DFO domain entities"@en ;
+    dcterms:description "What messages are about: aircraft, missions, targets, airspace, units, times, locations. Reuses CCO 2.2; adds only CQ-gated classes (design §3.4)."@en ;
+    dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+    dcterms:source <https://github.com/semanticarchitectures/aoc-dfo> ;
+    dcterms:title "AOC-DFO domain entities"@en ;
+    rdfs:comment "Public, unclassified content only (HANDLING.md). Upper ontologies at the AKS shared pin: BFO 2020 release-2024-01-29, CCO v2.2."@en ;
+    owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl>,
+        <https://www.commoncoreontologies.org/2026-08-13/CommonCoreOntologiesMerged> ;
+    owl:versionIRI <https://w3id.org/aoc-dfo/0.1.0/aoc-domain> ;
+    owl:versionInfo "0.1.0" .

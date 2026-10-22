@@ -1,0 +1,20 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+
+# Build outputs
+reports/
+*.jar
+
+# Guard: controlled material never lives in this repo (HANDLING.md, OD-1)
+corpus-controlled/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+catalog-v001.xml.bak

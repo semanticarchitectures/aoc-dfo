@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Resolves every owl:imports IRI to a local file. Used by ROBOT and Protégé.
+     No ontology is fetched over the network (NFR-4). Keep in sync with imports/PINS.yaml
+     and src/aoc_dfo/modules.py; the catalog test checks both. -->
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- BFO 2020, tag release-2024-01-29. Ontology IRI and (undated) version IRI. -->
+    <uri name="http://purl.obolibrary.org/obo/bfo.owl" uri="imports/bfo-core.ttl"/>
+    <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl" uri="imports/bfo-core.ttl"/>
+    <!-- CCO v2.2 merged. Ontology IRI and version IRI. -->
+    <uri name="https://www.commoncoreontologies.org/CommonCoreOntologiesMerged" uri="imports/CommonCoreOntologiesMerged.ttl"/>
+    <uri name="https://www.commoncoreontologies.org/2026-08-13/CommonCoreOntologiesMerged" uri="imports/CommonCoreOntologiesMerged.ttl"/>
+    <!-- AOC-DFO modules (ontology IRIs). -->
+    <uri name="https://w3id.org/aoc-dfo/aoc-dfo" uri="aoc-dfo.ttl"/>
+    <uri name="https://w3id.org/aoc-dfo/aoc-domain" uri="aoc-domain.ttl"/>
+    <uri name="https://w3id.org/aoc-dfo/aoc-msgstruct" uri="aoc-msgstruct.ttl"/>
+    <uri name="https://w3id.org/aoc-dfo/aoc-messages" uri="aoc-messages.ttl"/>
+    <uri name="https://w3id.org/aoc-dfo/aoc-doctrine" uri="aoc-doctrine.ttl"/>
+    <uri name="https://w3id.org/aoc-dfo/aoc-flows" uri="aoc-flows.ttl"/>
+    <uri name="https://w3id.org/aoc-dfo/aoc-threads" uri="aoc-threads.ttl"/>
+    <uri name="https://w3id.org/aoc-dfo/aoc-align" uri="aoc-align.ttl"/>
+</catalog>

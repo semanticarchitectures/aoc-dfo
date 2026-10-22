@@ -1,0 +1,24 @@
+# Vendored upper ontologies at the AKS shared pin.
+# Source of truth: acquisition-knowledge-system/.kiro/steering/ontology.md ("Pinned versions", ADR 0006).
+# Never change a pin here first (R6.1, task C.4). CI fails if a file's SHA-256 differs (R6.7).
+pins:
+  - name: BFO 2020
+    file: bfo-core.ttl
+    repo: https://github.com/BFO-ontology/BFO-2020
+    ref: release-2024-01-29
+    commit: 044490fc5100ffed6df7d4d15cbc167698b6fdee
+    path: src/owl/bfo-core.ttl
+    sha256: 6944e2c96a0d8709dc15ae5364792019e208061eda3f32311af4f3b8d8443a3b
+    ontology_iri: http://purl.obolibrary.org/obo/bfo.owl
+    version_iri: http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl
+    license: CC BY 4.0
+  - name: CCO
+    file: CommonCoreOntologiesMerged.ttl
+    repo: https://github.com/CommonCoreOntology/CommonCoreOntologies
+    ref: v2.2
+    commit: 0bc7d33e1bc09fd4693366119ab4e03cb0340042
+    path: src/cco-merged/CommonCoreOntologiesMerged.ttl
+    sha256: a9453382b25b40781c181d6ba44981f228abb76d90d548846713adba9baadb42
+    ontology_iri: https://www.commoncoreontologies.org/CommonCoreOntologiesMerged
+    version_iri: https://www.commoncoreontologies.org/2026-08-13/CommonCoreOntologiesMerged
+    license: BSD 3-Clause (LICENSE-CCO)
