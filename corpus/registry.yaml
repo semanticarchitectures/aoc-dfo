@@ -1,6 +1,6 @@
 # AOC-DFO corpus registry
-# Spec: AOC-DFO-REQ v1.0 Req 1.1, 1.4; AOC-DFO-DES v1.0 §2
-# Generated: 2026-09-04. Verified against doctrine.af.mil Smart Book (4 Jul 2026),
+# Spec: AOC-DFO-REQ v1.1 R1.1-R1.7; AOC-DFO-DES v1.1 §2. Amendment 001 applied 2026-10-22.
+# Generated: 2026-09-04. Updated: 2026-10-22 (OD-1: public sources only). Verified against doctrine.af.mil Smart Book (4 Jul 2026),
 # jcs.mil doctrine status (25 Mar 2025), USMCU JADO libguide (3 Aug 2026),
 # e-publishing.af.mil, niem.gov / OASIS NIEMOpen, mimworld.org.
 #
@@ -8,13 +8,16 @@
 #   1a  public web, no login          (fully citable, ingest directly)
 #   1b  UNCLASSIFIED but CAC-gated    (JEL+/JDEIS, WMA portal; citable if obtained)
 #   2   distribution-controlled / CUI (never in public repo; corpus-controlled/ only)
-# status values: verified | verify-date | superseded | unavailable
+# status values: verified | verify-date | verify-availability | superseded | unavailable
+# OD-1 (Amendment 001): no CAC access. Every tier 1b and tier 2 entry is `unavailable` for v1.x.
+# A `superseded` public earlier edition is the working source; assertions from it carry dfo:supersededBy.
+# Ingest only from official releases (R1.6); unofficial mirrors are never sources.
 #
 # Design note: current joint pubs are 1b (JEL+ requires CAC). Public 1a copies
 # are typically the *previous* edition (FAS/DTIC mirrors). Registry lists both so
 # the build can run on 1a and be upgraded to 1b without re-anchoring.
 
-registry_version: 1
+registry_version: 2
 default_handling: UNCLASSIFIED
 
 sources:
@@ -124,6 +127,16 @@ sources:
     role: PRIMARY for internal division/team flows and products — 185 pp, no releasability restrictions
     notes: "Supersedes DAFMAN 13-1AOC V3 (18 Dec 2020). Likely the single richest Tier 1 source for Phase 2/7. Ingest first."
 
+  - id: AFMAN-13-1AOCV2
+    title: "AFMAN 13-1AOC Vol 2, Standardization/Evaluation Program—Air Operations Center (AOC)/Operations Center (OC)"
+    issuer: ACC/A3TV (e-Publishing)
+    edition: "18 Feb 2020"
+    tier: 1a
+    status: verified
+    url: https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-1aocv2/afman13-1aocv2.pdf
+    role: secondary — official core division names and abbreviations (para 1.1); no system or flow content
+    notes: "Para 1.1 names the core divisions: ISR Division (IRD), Strategy Division (SRD), Combat Plans Division (CPD), Combat Operations Division (COD), Air Mobility Division (AMD). Para 5.8.3.3.2 confirms AFTTP 3-3 lives on Intelink (CAC), supporting AFTTP-3-3.AOC tier 2."
+
   - id: AFI-13-114V3
     title: "AFI 13-114 Vol 3, Air Support Operations Center (ASOC) Operations Procedures"
     issuer: ACC/A3Y (e-Publishing)
@@ -138,7 +151,7 @@ sources:
     title: "AFTTP 3-3.AOC, Combat Fundamentals—Air Operations Center"
     issuer: 561 JTS / ACC
     edition: unknown
-    tier: 2
+    tier: "2"
     status: unavailable
     url: null
     role: tactical AOC procedures; message-level detail
@@ -151,7 +164,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "2025 (current, JEL+)"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/jp3_30.pdf
     role: primary — JFACC, JAOC, joint air tasking cycle, TACS/AAGS, JACCE, products (JAOP, AOD, ATO, ACO, SPINS)
     notes: "Exact 2025 signature date not visible from public sources; confirm on JEL+."
@@ -163,7 +176,8 @@ sources:
     tier: 1a
     status: superseded
     url: https://irp.fas.org/doddir/dod/jp3_30.pdf
-    role: public fallback for JP-3-30 until 1b copy obtained
+    superseded_by: JP-3-30
+    role: working source for joint air operations in v1.x (OD-1); every assertion carries dfo:supersededBy JP-3-30
     notes: "Anchor paragraph numbers will differ from 2025 edition; re-anchor on upgrade."
 
   - id: JP-3-60
@@ -171,7 +185,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "2024 (JEL+)"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/jp3_60.pdf
     role: joint targeting cycle, target nomination/JTL/RTL/NSL products, BDA
 
@@ -180,7 +194,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "2025 (JEL+)"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/jp3_09.pdf
     role: fire support coordination, FSCM, joint fires↔air tasking interfaces
     notes: "Retitled from 'Joint Fire Support' to 'Joint Fires' in this revision."
@@ -190,7 +204,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "2022 (JEL+)"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/jp3_52.pdf
     role: ACA, ACP/ACO, ACM definitions (domain layer)
 
@@ -199,7 +213,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "2024 (JEL+, jp3_01ch1)"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/jp3_01ch1.pdf
     role: AADC, AADP, IAMD flows
 
@@ -208,7 +222,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "2024 (JEL+, jp2_0ch1)"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/jp2_0ch1.pdf
     role: intelligence process, collection management flows
     notes: "JP 2-01 is no longer in the joint hierarchy; JIPOE is now a Joint Guide (jg_jipoe.pdf). Replace spec references to JP 2-01 with JP 2-0 + JIPOE guide."
@@ -218,7 +232,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "2022"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/JDN_pdf/jg_jipoe.pdf
     role: JIPOE products feeding target development
 
@@ -227,7 +241,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "2023 (JEL+)"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/jp6_0.pdf
     role: transport layer — data link, network, interoperability standards references
 
@@ -236,7 +250,7 @@ sources:
     issuer: Joint Staff J-7
     edition: "Dec 2025"
     tier: 1b
-    status: verify-date
+    status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/dictionary.pdf
     role: definition text for rdfs:comment on doctrine-layer classes
 
@@ -286,7 +300,7 @@ sources:
     title: "MIL-STD-6040, US Message Text Format (USMTF)"
     issuer: DISA
     edition: unknown
-    tier: 2
+    tier: "2"
     status: unavailable
     url: null
     role: USMTF set/field definitions (ATO, ACO, AIRSUPREQ, MISREP, TACREP, ...)
@@ -295,7 +309,7 @@ sources:
     title: "MIL-STD-6016, Tactical Data Link (TDL) 16 Message Standard"
     issuer: DISA / JITC
     edition: unknown
-    tier: 2
+    tier: "2"
     status: unavailable
     url: null
     role: J-series message/DFI/DUI definitions
@@ -304,7 +318,7 @@ sources:
     title: "MIL-STD-6017, Variable Message Format (VMF)"
     issuer: DISA
     edition: unknown
-    tier: 2
+    tier: "2"
     status: unavailable
     url: null
     role: K-series message definitions
@@ -313,7 +327,7 @@ sources:
     title: "USMTF XML (MTF-XML) schemas"
     issuer: DISA
     edition: unknown
-    tier: 2
+    tier: "2"
     status: unavailable
     url: null
     role: XML carrier for USMTF; would give element-path anchors directly
@@ -327,6 +341,37 @@ sources:
     url: null
     role: J-series message *catalog* (names, purposes) without field-level detail
     notes: "Sufficient for Phase 3 catalog; insufficient for Phase 4 elements."
+
+  # ---------------------------------------------------------------- NATO surrogates (OD-1)
+  - id: NATO-ADATP-3
+    title: "ADatP-3, NATO Message Text Formatting System (FORMETS)"
+    issuer: NATO Standardization Office
+    edition: unknown
+    tier: 1a
+    status: verify-availability
+    url: null
+    role: candidate public surrogate for USMTF (MIL-STD-6040) message names and structure
+    notes: "Ingest only if an official NATO public release is confirmed (R1.6). Unofficial mirrors excluded."
+
+  - id: NATO-ATDLP-5.16
+    title: "ATDLP-5.16, Standard for Tactical Data Link 16"
+    issuer: NATO Standardization Office
+    edition: unknown
+    tier: 1a
+    status: verify-availability
+    url: null
+    role: candidate public surrogate for MIL-STD-6016 (J-series message catalog)
+    notes: "Same rule as ADatP-3. If not publicly released, re-tier to 2 / unavailable."
+
+  - id: NATO-STANAG-5516
+    title: "STANAG 5516, Tactical Data Exchange — Link 16"
+    issuer: NATO Standardization Office
+    edition: unknown
+    tier: 1a
+    status: verify-availability
+    url: null
+    role: candidate public surrogate for Link 16 message definitions
+    notes: "A Sep 2026 search found only an unofficial mirror; excluded. Re-tier to 2 / unavailable unless an official public release is found."
 
   # ---------------------------------------------------------------- Systems
   - id: SYS-KRADOS
@@ -398,7 +443,7 @@ sources:
     url: null
     role: ISR PED node; product flows into AOC ISRD
 
-# ------------------------------------------------------------------ Findings for Amendment 001
+# ------------------------------------------------------------------ Findings (applied by Amendment 001, 2026-10-22)
 findings:
   - "AFDP 3-30 superseded by AFDP 3-0.1 (22 Jan 2025). Update REQ 2.1, DES §1/§2.1/§3.1."
   - "'AFDP 3-1' should be AFDP 3-01. Update DES §2.1."
