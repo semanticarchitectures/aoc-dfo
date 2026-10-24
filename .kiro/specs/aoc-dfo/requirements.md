@@ -3,7 +3,7 @@
 **Spec ID:** AOC-DFO-REQ
 **Version:** 1.1
 **Date:** 2026-10-22 (baseline v1.0: 2026-09-04)
-**Status:** Draft for review (v1.1 pending approval)
+**Status:** Approved v1.1 (Kevin Kelly, 2026-10-24)
 **Owning repo:** [semanticarchitectures/aoc-dfo](https://github.com/semanticarchitectures/aoc-dfo)
 **Umbrella:** [Acquisition Knowledge System](https://github.com/semanticarchitectures/acquisition-knowledge-system) (ADR 0005, ADR 0006)
 **Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md) — AKS role, shared pins, OD-1/OD-4, mission-thread layer

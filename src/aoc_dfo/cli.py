@@ -51,6 +51,16 @@ def cmd_check(args: argparse.Namespace) -> int:
     return 1 if problems else 0
 
 
+def cmd_site(args: argparse.Namespace) -> int:
+    from pathlib import Path
+
+    from .site import build_site
+
+    versions = build_site(Path(args.out))
+    print(f"built {args.out} (versions: {', '.join(versions)})")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="aoc-dfo")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -60,6 +70,9 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("fmt", help="rewrite ontology/*.ttl in canonical Turtle").set_defaults(func=cmd_fmt)
     sub.add_parser("labelmap", help="regenerate docs/cco-label-map.md").set_defaults(func=cmd_labelmap)
     sub.add_parser("check", help="pins, registry and handling checks").set_defaults(func=cmd_check)
+    s = sub.add_parser("site", help="build the GitHub Pages site that w3id IRIs redirect to")
+    s.add_argument("--out", default="site")
+    s.set_defaults(func=cmd_site)
     args = parser.parse_args(argv)
     return args.func(args)
 

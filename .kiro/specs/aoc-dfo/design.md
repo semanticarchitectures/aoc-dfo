@@ -89,12 +89,19 @@ Purpose: design-time mission-thread traceability (decision → information artif
 
 | Class | Parent (CCO 2.2 / BFO) | Key properties |
 |---|---|---|
-| `dfo:MissionThreadScenario` | `cco:Plan` (MD-1) | `dfo:scenarioLabel`, `dfo:isSynthetic true`, `dfo:variantOf` → another scenario |
-| `dfo:TransmissionStep` | `cco:PrescriptiveInformationContentEntity`; continuant part of a scenario | `dfo:stepOrder` (xsd:positiveInteger), `dfo:partOfScenario`, `dfo:realizesFlow` → `dfo:DataFlow`, `dfo:fallbackFor` → step; type references below |
+| `dfo:MissionThreadScenario` | `cco:DescriptiveInformationContentEntity` (MD-1, resolved 2026-10-24) | `dfo:scenarioLabel`, `dfo:isSynthetic true`, `dfo:variantOf` → another scenario |
+| `dfo:TransmissionStep` | `cco:DescriptiveInformationContentEntity`; continuant part of a scenario | `dfo:stepOrder` (xsd:positiveInteger), `dfo:partOfScenario`, `dfo:realizesFlow` → `dfo:DataFlow`, `dfo:fallbackFor` → step; type references below |
 | `dfo:CommunicationChannel` | `cco:TelecommunicationNetwork` | Subclasses: `dfo:Link16Network`, `dfo:VoiceNet`, `dfo:ChatService`, `dfo:SIPRNetService`, … added under the CQ gate. Later attributes (capacity, fallback, interoperability) attach here |
 | `dfo:EndpointRole` | BFO `role` | Borne by a `dfo:C2Node` or a platform. Capability profiles as defined subclasses, e.g. `dfo:Link16FighterEndpointRole ≡ dfo:EndpointRole and (inheres in some (cco:Aircraft and has part some Link 16 terminal))` |
 | `dfo:Decision`, `dfo:Task` | `cco:PlannedAct` | Defined in `aoc-doctrine` (§3.1); threads reference them |
 | *Information artifact type* | — (no class) | Any ICE class flagged `dfo:isInformationArtifactType true` |
+
+**Mission threads are not mission plans** (MD-1). A mission thread is a description of a
+hypothetical: what *would* move, over what, between whom. A mission plan, such as one Turnpoint
+produces at the mid and far horizons, is an actual plan with some level of detail and is a
+`cco:Plan`. AOC-DFO v1.x defines no mission-plan class. When the unmanned-to-AOC interface is
+modeled, a CQ may relate a plan to the threads used to analyze it; that relation, not shared
+parentage, is how the two meet.
 
 **Type references by punning.** A step is a real individual (an authored document part). What it is about is a class. Steps point to classes through annotation properties, so the ontology stays in OWL 2 DL and no hypothetical aircraft or ATO is asserted to exist:
 

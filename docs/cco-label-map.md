@@ -9,6 +9,7 @@ Every `cco:` shorthand used in the spec resolves here to exactly one CCO 2.2 ter
 | `cco:ActOfTargeting` | Act of Targeting | `https://www.commoncoreontologies.org/ont00000741` | class |
 | `cco:Aircraft` | Aircraft | `https://www.commoncoreontologies.org/ont00001043` | class |
 | `cco:ArmedForce` | Armed Force | `https://www.commoncoreontologies.org/ont00000274` | class |
+| `cco:DescriptiveInformationContentEntity` | Descriptive Information Content Entity | `https://www.commoncoreontologies.org/ont00000853` | class |
 | `cco:GeospatialRegion` | Geospatial Region | `https://www.commoncoreontologies.org/ont00000472` | class |
 | `cco:GovernmentOrganization` | Government Organization | `https://www.commoncoreontologies.org/ont00000408` | class |
 | `cco:InformationBearingEntity` | Information Bearing Entity | `https://www.commoncoreontologies.org/ont00000253` | class |

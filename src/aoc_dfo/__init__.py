@@ -8,9 +8,9 @@ from pathlib import Path
 
 __version__ = "0.1.0"
 
-#: Base IRI for every AOC-DFO term and module. PROVISIONAL until confirmed (see README,
-#: "Open items"). Change it here and regenerate headers; nothing else hard-codes it except
-#: ontology/catalog-v001.xml, which the catalog test checks against this value.
+#: Base IRI for every AOC-DFO term and module (chosen 2026-10-24). Resolved by w3id.org rules in
+#: docs/w3id/.htaccess, which redirect to the GitHub Pages site built by `aoc-dfo site`. Besides this
+#: constant, only ontology/catalog-v001.xml repeats it, and a test checks the two agree.
 BASE_IRI = "https://w3id.org/aoc-dfo/"
 
 #: Namespace for classes and properties (``dfo:``).

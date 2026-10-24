@@ -25,11 +25,12 @@ applies here and takes precedence; this file adds only what is specific to AOC-D
 | Shared names | ENSIM's `C2Node`, `DoctrineProcess`, `Decision` in the `dfo:` namespace | Umbrella ontology steering; Amendment 001 §A7 |
 | Provenance | PROV-O; named graph per source version; `dfo:anchor` per assertion | Umbrella tech steering; Amendment 001 §A7 |
 | Tooling | Python 3.12, uv, rdflib, pySHACL, ROBOT 1.9.8 (HermiT) | Umbrella tech steering |
-| Base IRI | `https://w3id.org/aoc-dfo/` — **provisional** | Open item |
+| Base IRI | `https://w3id.org/aoc-dfo/`; documents on GitHub Pages | Chosen 2026-10-24; w3id request in `docs/w3id/` |
 
 ## Modeling reminders
 
 - CCO 2.2 has no Directive ICE, no Military Organization and no Organization Role.
+- A mission thread is a description of a hypothetical (Descriptive ICE), not a mission plan (`cco:Plan`).
 - Mission-thread steps reference classes by annotation properties (punning); scenarios never assert
   hypothetical particulars.
 - Systems (KRADOS apps, TBMCS) implement standards; they never define flows.

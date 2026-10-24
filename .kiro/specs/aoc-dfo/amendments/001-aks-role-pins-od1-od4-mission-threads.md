@@ -1,6 +1,6 @@
 # Amendment 001 — AKS role, shared pins, OD-1/OD-4, mission-thread layer
 
-- Status: Proposed (2026-10-22). Takes effect when Kevin approves requirements v1.1.
+- Status: Accepted (requirements v1.1 approved 2026-10-24). Design and tasks v1.1 await approval.
 - Amends: AOC-DFO-REQ v1.0, AOC-DFO-DES v1.0, AOC-DFO-TSK v1.0 (all 2026-09-04)
 - Produces: AOC-DFO-REQ v1.1, AOC-DFO-DES v1.1, AOC-DFO-TSK v1.1
 - Umbrella references: [ADR 0005](https://github.com/semanticarchitectures/acquisition-knowledge-system/blob/main/docs/adr/0005-one-model-many-apps.md),
@@ -118,10 +118,10 @@ same way.
 
 | Class (spec name) | Implemented as | CCO 2.2 parent | Notes |
 | --- | --- | --- | --- |
-| MissionThreadScenario | `dfo:MissionThreadScenario` | `cco:Plan` (Prescriptive ICE) | Analyst-authored. One instance = one hypothetical thread, e.g. "CAS tasking to a fighter flight, Link 16 degraded" |
+| MissionThreadScenario | `dfo:MissionThreadScenario` | `cco:DescriptiveInformationContentEntity` (MD-1, resolved) | Analyst-authored. A description of a hypothetical, not a plan. One instance = one hypothetical thread, e.g. "CAS tasking to a fighter flight, Link 16 degraded" |
 | Decision/Task | `dfo:Decision`, `dfo:Task` | `cco:PlannedAct` | Reuses ENSIM's name `Decision` (A7). Anchors a thread to the doctrine layer's processes |
 | InformationArtifactType | Not a class. The **role a class plays**: any subclass of `cco:InformationContentEntity` in `aoc-doctrine` or `aoc-messages`, flagged `dfo:isInformationArtifactType true` | — | Avoids a metaclass. Doctrinal products and message types *are* the artifact types |
-| TransmissionStep | `dfo:TransmissionStep` | `cco:PrescriptiveInformationContentEntity`, part of a scenario | Ordered. Says which artifact type, over which channel type, from which decision, between which endpoint roles. Optionally realizes a doctrinal `dfo:DataFlow` |
+| TransmissionStep | `dfo:TransmissionStep` | `cco:DescriptiveInformationContentEntity`, part of a scenario | Ordered. Says which artifact type, over which channel type, from which decision, between which endpoint roles. Optionally realizes a doctrinal `dfo:DataFlow` |
 | ChannelType | `dfo:CommunicationChannel` and subclasses (Link 16 network, voice net, chat, …) | `cco:TelecommunicationNetwork` | First-class so capacity, fallback and interoperability attributes can be added later without restructuring. Face-to-face and courier media carry no channel (open question MD-3) |
 | EndpointRole | `dfo:EndpointRole` and subclasses | BFO `role` | Borne by organizations (AOC divisions, TACS nodes) or platforms. Capability profiles are subclasses defined by what the bearer has, e.g. "fighter with a Link 16 terminal". Never a specific airframe |
 
@@ -182,8 +182,12 @@ fallback sequences drawn from real operations.
 
 ## Open modeling questions (one line each, for review)
 
-- **MD-1.** `MissionThreadScenario ⊑ cco:Plan` treats a hypothetical thread as prescriptive. If
-  reviewers prefer descriptive-of-a-hypothetical, the alternative parent is Representational ICE.
+- **MD-1. Resolved 2026-10-24 (Kevin Kelly).** A mission thread is a *description of a
+  hypothetical*, so `dfo:MissionThreadScenario` and `dfo:TransmissionStep` are Descriptive ICEs.
+  A *mission plan* is different: an actual plan with some level of detail, a `cco:Plan`
+  (Prescriptive ICE). CCO's Predictive ICE was rejected: it describes an uncertain future event, a
+  forecast, which a what-if thread is not. Representational ICE was rejected as too loosely
+  defined in CCO 2.2 (no subclasses, definition "represents some entity").
 - **MD-2.** `dfo:Task`: is a task the act tasked (`PlannedAct`, chosen) or the tasking content
   (Prescriptive ICE)? The doctrinal product (e.g. the ATO line) already covers the content.
 - **MD-3.** Non-network media (face-to-face brief, courier) have no `CommunicationChannel`. Record

@@ -24,7 +24,7 @@ Umbrella steering and ADRs take precedence over anything in this repo. Read the 
 
 ## Status
 
-Phase 0 (scaffolding). The spec is v1.1, pending approval: [requirements](.kiro/specs/aoc-dfo/requirements.md),
+Phase 0 done. Requirements v1.1 approved 2026-10-24; design and tasks v1.1 pending approval: [requirements](.kiro/specs/aoc-dfo/requirements.md),
 [design](.kiro/specs/aoc-dfo/design.md), [tasks](.kiro/specs/aoc-dfo/tasks.md),
 [Amendment 001](.kiro/specs/aoc-dfo/amendments/001-aks-role-pins-od1-od4-mission-threads.md).
 The ontology modules are headers only; no classes yet.
@@ -75,8 +75,8 @@ CI also runs ROBOT (HermiT reasoning and a QC report) with the XML catalog; see
 
 ## Open items
 
-- **Base IRI is provisional:** `https://w3id.org/aoc-dfo/`. Confirm (or replace) before any class
-  is published; it is set once in `src/aoc_dfo/__init__.py` and the catalog.
+- **Base IRI** `https://w3id.org/aoc-dfo/`: chosen; the w3id.org request is drafted in
+  [`docs/w3id/`](docs/w3id/) and waits for the GitHub Pages site it redirects to.
 - GMNS's ontology and conformance spec are not in the GMNS repo, so GMNS alignment and conformance
   reconciliation wait (R6.6).
 
