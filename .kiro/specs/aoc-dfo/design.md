@@ -134,6 +134,8 @@ Class names in the example are placeholders until the CQ gate admits them.
 
 Alignment axioms to partners, kept out of the core modules (R7.3, R14.3): ENSIM names (documented in `docs/ensim-alignment.md`; ENSIM is a TypeScript/JSON schema, so alignment is a mapping table plus, where useful, IRIs minted for ENSIM concepts), the KB ontology (when it exists), and GMNS (when its ontology is published at the shared pin).
 
+**GMNS message classes** (umbrella ADR 0010, 2026-11-06): GMNS keeps `gmns:C2Message` and its subclasses. Once task 3.6 produces AOC-DFO's message-content classes, `aoc-align` relates them to GMNS's with `rdfs:subClassOf` or `owl:equivalentClass` and a rationale. Both sit under CCO `Message`. GMNS's ontology is read at a pinned commit; it imports nothing from AOC-DFO. Other near-matches found 2026-11-06: `gmns:SimulatedNetwork` and `dfo:CommunicationChannel` (both under CCO Telecommunication Network), `gmns:OperationalRole` and `dfo:EndpointRole` (both BFO `role`), `gmns:ActOfC2MessageTransmission` and `dfo:DataFlow`. Not equivalent: `gmns:OperationsCenterNode` is network equipment, `dfo:C2Node` an organization; `gmns:ScenarioSpecification` prescribes a simulation run, `dfo:MissionThreadScenario` describes a hypothetical.
+
 ## 4. Mapping rules (normative)
 
 Held in `docs/mapping-rules.md`; summarized:
