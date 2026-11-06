@@ -1,7 +1,10 @@
 # AOC-DFO conformance checklist
 
-Status: v0.1 (2026-10-22). Satisfies R6.6 until GMNS publishes its `ontology-conformance-spec.md`;
-then the two are reconciled by amendment. Each rule cites where it comes from and how it is checked.
+Status: v0.1 (2026-10-22). Satisfies R6.6 until it is reconciled, by amendment, with GMNS's
+`ontology-conformance-spec.md` (public since 2026-11-03 on GMNS branch `specs/python-port`, commit
+`3f8ebf7`; reconcile once merged). GMNS rules this checklist lacks: genus-differentia
+`skos:definition` for every minted class; `skos:editorialNote` on contestable modeling decisions;
+a referential check that every CCO/BFO IRI in the ontology files resolves in the pinned release. Each rule cites where it comes from and how it is checked.
 
 | # | Rule | Source | Check |
 | --- | --- | --- | --- |

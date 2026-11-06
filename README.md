@@ -77,8 +77,8 @@ CI also runs ROBOT (HermiT reasoning and a QC report) with the XML catalog; see
 
 - **Base IRI** `https://w3id.org/aoc-dfo/`: chosen; the w3id.org request is drafted in
   [`docs/w3id/`](docs/w3id/) and waits for the GitHub Pages site it redirects to.
-- GMNS's ontology and conformance spec are not in the GMNS repo, so GMNS alignment and conformance
-  reconciliation wait (R6.6).
+- GMNS's ontology and conformance spec are now public on GMNS branch `specs/python-port`
+  (not yet merged). Conformance reconciliation (R6.6) and GMNS alignment start once it is on `main`.
 
 ## Handling
 
