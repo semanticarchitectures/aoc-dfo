@@ -1,5 +1,9 @@
 # Submitting the w3id.org request
 
+**Status:** submitted 2026-11-08 as [perma-id/w3id.org#7107](https://github.com/perma-id/w3id.org/pull/7107),
+from `semanticarchitectures/w3id.org` branch `aoc-dfo` (commit `705d161`). The Pages target was checked
+live first (`200 text/turtle`). Keep `docs/w3id/` identical to what is merged.
+
 The identifier `https://w3id.org/aoc-dfo/` is drafted in [`docs/w3id/`](w3id/): `.htaccess` and
 `README.md`, the only two files w3id allows in an identifier directory. Checked 2026-10-24:
 
