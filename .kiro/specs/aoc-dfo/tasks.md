@@ -31,7 +31,7 @@ Tasks changed or added by Amendment 001 are marked *(A001)*.
 - [x] **1.4** Build the schema ingest for NIEM 6.0 MilOps and MIM: XSD/model → element tables with element-path anchors. _Requirements: R1.2, R5.1_ *(A001)* — done 2026-11-11 for NIEM 6.0 mo and usmtf; MIM deferred (site unreachable)
 - [x] **1.5** Stand up the corpus MCP server (search, fetch-by-anchor, list-sources) for extraction agents. _Requirements: R5.4_ — done 2026-11-11 (`aoc-dfo-mcp`)
 - [x] **1.6** CI check: any ontology assertion or catalog row lacking a provenance link fails the build. _Requirements: R1.2_ — done 2026-11-11 (`aoc-dfo citations`: anchors must exist in ingested sources)
-- [ ] **1.7** *(A001)* For each joint publication, find whether a public earlier edition exists on an official or long-standing government mirror; record it with `dfo:supersededBy` the current edition. _Requirements: R1.5, R1.6_
+- [ ] **1.7** *(A001)* For each joint publication, find whether a public earlier edition exists on an official or long-standing government mirror; record it with `dfo:supersededBy` the current edition. _Requirements: R1.5, R1.6_ — in progress: candidates in `corpus/joint-pub-editions.md`; JP 3-30 has no official public copy newer than 2010 (R1.6 decision pending)
 
 ## Phase 2 — Doctrine layer
 
