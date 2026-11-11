@@ -6,7 +6,7 @@
 **Date:** 2026-10-22 (baseline v1.0: 2026-09-04)
 **Traces to:** AOC-DFO-REQ v1.1, AOC-DFO-DES v1.1
 **Repo:** all tasks land in `semanticarchitectures/aoc-dfo` unless marked *(umbrella)*.
-**Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md)
+**Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md); [002](amendments/002-citation-form-and-niem-usmtf.md) (proposed) — citation form, provenance module, NIEM USMTF vocabulary
 
 Conventions: tasks are ordered for execution; `[ ]` incomplete, `[x]` done; each task cites the
 requirements it satisfies. Phases 0–1 are sequential; Phases 2–4 can overlap once their inputs exist;
@@ -25,12 +25,12 @@ Tasks changed or added by Amendment 001 are marked *(A001)*.
 
 ## Phase 1 — Source corpus and provenance
 
-- [ ] **1.1** Define the ProvenanceEnvelope as a PROV-O pattern (`prov:Entity` per source version, named graph per version, `dfo:anchor`, `dfo:sourceTier`, `dfo:handlingCaveat`, `dfo:supersededBy`) and its SHACL shape; mirror it in the `registry.yaml` schema. _Requirements: R1.1, R1.7, R8.6_ *(A001)*
+- [x] **1.1** Define the ProvenanceEnvelope as a PROV-O pattern (`prov:Entity` per source version, named graph per version, `dfo:anchor`, `dfo:sourceTier`, `dfo:handlingCaveat`, `dfo:supersededBy`) and its SHACL shape; mirror it in the `registry.yaml` schema. _Requirements: R1.1, R1.7, R8.6_ *(A001)* — done 2026-11-11 (citation form per Amendment 002)
 - [x] **1.2** Populate `corpus/registry.yaml` with Tier 1a sources from design §2.1 and register Tier 1b/Tier 2 sources as `unavailable` and NATO surrogates as `verify-availability`. _Requirements: R1.3, R1.4, R1.6_ *(A001: updated 2026-10-22)*
 - [ ] **1.3** Build the ingest script: PDF/HTML → anchored Markdown with paragraph, figure and table anchors preserved. Ingest AFMAN 13-1AOC Vol 3 first. _Requirements: R1.2_ *(A001)*
-- [ ] **1.4** Build the schema ingest for NIEM 6.0 MilOps and MIM: XSD/model → element tables with element-path anchors. _Requirements: R1.2, R5.1_ *(A001)*
-- [ ] **1.5** Stand up the corpus MCP server (search, fetch-by-anchor, list-sources) for extraction agents. _Requirements: R5.4_
-- [ ] **1.6** CI check: any ontology assertion or catalog row lacking a provenance link fails the build. _Requirements: R1.2_
+- [x] **1.4** Build the schema ingest for NIEM 6.0 MilOps and MIM: XSD/model → element tables with element-path anchors. _Requirements: R1.2, R5.1_ *(A001)* — done 2026-11-11 for NIEM 6.0 mo and usmtf; MIM deferred (site unreachable)
+- [x] **1.5** Stand up the corpus MCP server (search, fetch-by-anchor, list-sources) for extraction agents. _Requirements: R5.4_ — done 2026-11-11 (`aoc-dfo-mcp`)
+- [x] **1.6** CI check: any ontology assertion or catalog row lacking a provenance link fails the build. _Requirements: R1.2_ — done 2026-11-11 (`aoc-dfo citations`: anchors must exist in ingested sources)
 - [ ] **1.7** *(A001)* For each joint publication, find whether a public earlier edition exists on an official or long-standing government mirror; record it with `dfo:supersededBy` the current edition. _Requirements: R1.5, R1.6_
 
 ## Phase 2 — Doctrine layer

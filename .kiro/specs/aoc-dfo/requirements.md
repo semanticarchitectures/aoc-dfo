@@ -6,7 +6,7 @@
 **Status:** Approved v1.1 (Kevin Kelly, 2026-10-24)
 **Owning repo:** [semanticarchitectures/aoc-dfo](https://github.com/semanticarchitectures/aoc-dfo)
 **Umbrella:** [Acquisition Knowledge System](https://github.com/semanticarchitectures/acquisition-knowledge-system) (ADR 0005, ADR 0006)
-**Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md) — AKS role, shared pins, OD-1/OD-4, mission-thread layer
+**Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md) — AKS role, shared pins, OD-1/OD-4, mission-thread layer; [002](amendments/002-citation-form-and-niem-usmtf.md) (proposed) — citation form, provenance module, NIEM USMTF vocabulary
 
 Criteria changed or added by Amendment 001 are marked *(A001)*. IDs are cited as `R<n>.<m>`
 (Requirement n, criterion m).
@@ -48,7 +48,7 @@ The primary consumers are (a) AKS components and agents that read the shared mod
 
 **Acceptance criteria**
 1. WHEN a source document is added to the corpus THEN the system SHALL create a ProvenanceEnvelope record with document identifier, edition/version, publication date, tier (1a, 1b or 2), and handling caveat. *(A001)*
-2. WHEN an ontology class, property, message element, flow, or transmission step is asserted THEN the system SHALL attach at least one provenance link to a source version (`prov:wasDerivedFrom`) and an anchor (paragraph, figure, table, or schema path). *(A001)*
+2. *(A002 proposed: citation form changes, see Amendment 002 §B1.)* WHEN an ontology class, property, message element, flow, or transmission step is asserted THEN the system SHALL attach at least one provenance link to a source version (`prov:wasDerivedFrom`) and an anchor (paragraph, figure, table, or schema path). *(A001)*
 3. IF a Tier 1b or Tier 2 source is unavailable THEN the system SHALL record it in the corpus registry with status `unavailable` and SHALL NOT fabricate content attributed to it. *(A001)*
 4. THE corpus registry SHALL include, at minimum, the Tier 1a publications listed in design.md §2.1.
 5. *(A001)* WHERE a public earlier edition substitutes for an unavailable current edition THE system SHALL mark every assertion derived from it with `dfo:supersededBy` the current edition and SHALL list it in the gap report.
