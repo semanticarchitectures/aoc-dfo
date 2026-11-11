@@ -74,6 +74,17 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return 0 if conforms else 1
 
 
+def cmd_citations(args: argparse.Namespace) -> int:
+    from .citations import catalog_citations, check, rdf_citations
+
+    cites = rdf_citations() + catalog_citations()
+    problems = check(cites)
+    for p in problems:
+        print(p, file=sys.stderr)
+    print(f"{len(cites)} citations, {len(problems)} unresolved")
+    return 1 if problems else 0
+
+
 def cmd_ingest(args: argparse.Namespace) -> int:
     if args.source == "niem":
         from .ingest import niem
@@ -109,6 +120,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("check", help="pins, registry and handling checks").set_defaults(func=cmd_check)
     sub.add_parser("prov", help="regenerate aoc-prov.ttl and provenance/sources.trig").set_defaults(func=cmd_prov)
     sub.add_parser("validate", help="run SHACL provenance shapes").set_defaults(func=cmd_validate)
+    sub.add_parser("citations", help="check every citation resolves to an ingested anchor").set_defaults(func=cmd_citations)
     i = sub.add_parser("ingest", help="ingest a registered source into anchored text or tables")
     i.add_argument("source", choices=["niem", "afman-v3"])
     i.set_defaults(func=cmd_ingest)
