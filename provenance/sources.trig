@@ -1,0 +1,500 @@
+# AOC-DFO — public, unclassified content only (HANDLING.md).
+# Generated from corpus/registry.yaml by `uv run aoc-dfo prov`. Do not edit.
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dfo: <https://w3id.org/aoc-dfo/ontology#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix src: <https://w3id.org/aoc-dfo/source/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+src:AFDP-2-0 {
+    src:AFDP-2-0 a prov:Entity ;
+        dcterms:identifier "AFDP-2-0" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 2-0, Intelligence" ;
+        prov:atLocation <https://www.doctrine.af.mil/> ;
+        dfo:availability "verified" ;
+        dfo:edition "1 May 2026" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-3-0 {
+    src:AFDP-3-0 a prov:Entity ;
+        dcterms:identifier "AFDP-3-0" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 3-0, Operations" ;
+        prov:atLocation <https://www.doctrine.af.mil/Doctrine-Publications/AFDP-3-0-Operations/> ;
+        dfo:availability "verified" ;
+        dfo:edition "22 Jan 2025" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-3-0.1 {
+    src:AFDP-3-0.1 a prov:Entity ;
+        dcterms:identifier "AFDP-3-0.1" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 3-0.1, Command and Control" ;
+        prov:atLocation <https://www.doctrine.af.mil/Portals/61/documents/AFDP_3-0_1/AFDP3-0.1CommandandControl.pdf> ;
+        dfo:availability "verified" ;
+        dfo:edition "22 Jan 2025" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-3-01 {
+    src:AFDP-3-01 a prov:Entity ;
+        dcterms:identifier "AFDP-3-01" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 3-01, Counterair Operations" ;
+        prov:atLocation <https://www.doctrine.af.mil/Doctrine-Publications/AFDP-3-01-Counterair-Ops/> ;
+        dfo:availability "verified" ;
+        dfo:edition "15 Jun 2023" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-3-30-LEGACY {
+    src:AFDP-3-30-LEGACY a prov:Entity ;
+        dcterms:identifier "AFDP-3-30-LEGACY" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 3-30, Command and Control (Appendix B: The Air Operations Center)" ;
+        prov:atLocation <https://www.doctrine.af.mil/Portals/61/documents/Afdp_3-30/3-30-D70-C2-Appendix-AOC.pdf> ;
+        dfo:availability "superseded" ;
+        dfo:edition "7 Jan 2020" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-3-36 {
+    src:AFDP-3-36 a prov:Entity ;
+        dcterms:identifier "AFDP-3-36" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 3-36, Air Mobility Operations" ;
+        prov:atLocation <https://www.doctrine.af.mil/> ;
+        dfo:availability "verified" ;
+        dfo:edition "24 Jun 2024" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-3-52 {
+    src:AFDP-3-52 a prov:Entity ;
+        dcterms:identifier "AFDP-3-52" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 3-52, Airspace Control" ;
+        prov:atLocation <https://www.doctrine.af.mil/Doctrine-Publications/AFDP-3-52-Airspace-Control/> ;
+        dfo:availability "verified" ;
+        dfo:edition "26 Sep 2025" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-3-60 {
+    src:AFDP-3-60 a prov:Entity ;
+        dcterms:identifier "AFDP-3-60" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 3-60, Targeting" ;
+        prov:atLocation <https://www.doctrine.af.mil/> ;
+        dfo:availability "verified" ;
+        dfo:edition "1 May 2026" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-3-85 {
+    src:AFDP-3-85 a prov:Entity ;
+        dcterms:identifier "AFDP-3-85" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 3-85, Electromagnetic Spectrum Operations" ;
+        prov:atLocation <https://www.doctrine.af.mil/> ;
+        dfo:availability "verified" ;
+        dfo:edition "14 Dec 2023" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFDP-5-0 {
+    src:AFDP-5-0 a prov:Entity ;
+        dcterms:identifier "AFDP-5-0" ;
+        dcterms:publisher "LeMay Center" ;
+        dcterms:title "AFDP 5-0, Planning" ;
+        prov:atLocation <https://www.doctrine.af.mil/> ;
+        dfo:availability "verified" ;
+        dfo:edition "22 Jan 2025" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFI-13-114V3 {
+    src:AFI-13-114V3 a prov:Entity ;
+        dcterms:identifier "AFI-13-114V3" ;
+        dcterms:publisher "ACC/A3Y (e-Publishing)" ;
+        dcterms:title "AFI 13-114 Vol 3, Air Support Operations Center (ASOC) Operations Procedures" ;
+        prov:atLocation <https://static.e-publishing.af.mil/production/1/af_a3_5/publication/afi13-114v3/afi13-114v3.pdf> ;
+        dfo:availability "verify-date" ;
+        dfo:edition "1 Jun 2009" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFMAN-13-1AOCV2 {
+    src:AFMAN-13-1AOCV2 a prov:Entity ;
+        dcterms:identifier "AFMAN-13-1AOCV2" ;
+        dcterms:publisher "ACC/A3TV (e-Publishing)" ;
+        dcterms:title "AFMAN 13-1AOC Vol 2, Standardization/Evaluation Program—Air Operations Center (AOC)/Operations Center (OC)" ;
+        prov:atLocation <https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-1aocv2/afman13-1aocv2.pdf> ;
+        dfo:availability "verified" ;
+        dfo:edition "18 Feb 2020" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFMAN-13-1AOCV3 {
+    src:AFMAN-13-1AOCV3 a prov:Entity ;
+        dcterms:identifier "AFMAN-13-1AOCV3" ;
+        dcterms:publisher "ACC/A3C (e-Publishing)" ;
+        dcterms:title "AFMAN 13-1AOC Vol 3, Operational Procedures—Air Operations Center (AOC)/Operations Center (OC)" ;
+        prov:atLocation <https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-1aocv3/afman13-1aocv3_.pdf> ;
+        dfo:availability "verified" ;
+        dfo:edition "25 Jun 2024" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:AFTTP-3-3.AOC {
+    src:AFTTP-3-3.AOC a prov:Entity ;
+        dcterms:identifier "AFTTP-3-3.AOC" ;
+        dcterms:publisher "561 JTS / ACC" ;
+        dcterms:title "AFTTP 3-3.AOC, Combat Fundamentals—Air Operations Center" ;
+        dfo:availability "unavailable" ;
+        dfo:edition "unknown" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "2" .
+}
+
+src:AOC-DFO-DES-1.1 {
+    src:AOC-DFO-DES-1.1 a prov:Entity ;
+        dcterms:identifier "AOC-DFO-DES-1.1" ;
+        dcterms:issued "2026-11-11"^^xsd:date ;
+        dcterms:publisher "Semantic Architectures" ;
+        dcterms:title "AOC-DFO Design Document v1.1" ;
+        prov:atLocation <https://github.com/semanticarchitectures/aoc-dfo/blob/main/.kiro/specs/aoc-dfo/design.md> ;
+        dfo:availability "verified" ;
+        dfo:edition "1.1 (approved 2026-11-11)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:C2CORE {
+    src:C2CORE a prov:Entity ;
+        dcterms:identifier "C2CORE" ;
+        dcterms:publisher "DoD (historical)" ;
+        dcterms:title "C2 Core / UCore (archival)" ;
+        dfo:availability "verify-date" ;
+        dfo:edition "C2 Core 2.x / UCore 2.0" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:DOD-DICTIONARY {
+    src:DOD-DICTIONARY a prov:Entity ;
+        dcterms:identifier "DOD-DICTIONARY" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "DOD Dictionary of Military and Associated Terms" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/new_pubs/dictionary.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "Dec 2025" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:JC3IEDM-3.1.4 {
+    src:JC3IEDM-3.1.4 a prov:Entity ;
+        dcterms:identifier "JC3IEDM-3.1.4" ;
+        dcterms:publisher "MIP / NATO" ;
+        dcterms:title "JC3IEDM 3.1.4 (STANAG 5525) — MIP Baseline 3.1" ;
+        dfo:availability "verify-date" ;
+        dfo:edition "3.1.4" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:JG-JIPOE {
+    src:JG-JIPOE a prov:Entity ;
+        dcterms:identifier "JG-JIPOE" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "Joint Guide for Joint Intelligence Preparation of the Operational Environment" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/JDN_pdf/jg_jipoe.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "2022" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:JP-2-0 {
+    src:JP-2-0 a prov:Entity ;
+        dcterms:identifier "JP-2-0" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 2-0, Joint Intelligence (w/Ch 1)" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/new_pubs/jp2_0ch1.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "2024 (JEL+, jp2_0ch1)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:JP-3-01 {
+    src:JP-3-01 a prov:Entity ;
+        dcterms:identifier "JP-3-01" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 3-01, Countering Air and Missile Threats (w/Ch 1)" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/new_pubs/jp3_01ch1.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "2024 (JEL+, jp3_01ch1)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:JP-3-09 {
+    src:JP-3-09 a prov:Entity ;
+        dcterms:identifier "JP-3-09" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 3-09, Joint Fires" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/new_pubs/jp3_09.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "2025 (JEL+)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:JP-3-30 {
+    src:JP-3-30 a prov:Entity ;
+        dcterms:identifier "JP-3-30" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 3-30, Joint Air Operations" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/new_pubs/jp3_30.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "2025 (current, JEL+)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:JP-3-30-2019 {
+    src:JP-3-30-2019 a prov:Entity ;
+        dcterms:identifier "JP-3-30-2019" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 3-30, Joint Air Operations (previous edition)" ;
+        prov:atLocation <https://irp.fas.org/doddir/dod/jp3_30.pdf> ;
+        dfo:availability "superseded" ;
+        dfo:edition "25 Jul 2019" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" ;
+        dfo:supersededBy src:JP-3-30 .
+}
+
+src:JP-3-52 {
+    src:JP-3-52 a prov:Entity ;
+        dcterms:identifier "JP-3-52" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 3-52, Joint Airspace Control" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/new_pubs/jp3_52.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "2022 (JEL+)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:JP-3-60 {
+    src:JP-3-60 a prov:Entity ;
+        dcterms:identifier "JP-3-60" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 3-60, Joint Targeting" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/new_pubs/jp3_60.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "2024 (JEL+)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:JP-6-0 {
+    src:JP-6-0 a prov:Entity ;
+        dcterms:identifier "JP-6-0" ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 6-0, Joint Communications" ;
+        prov:atLocation <https://jdeis.js.mil/jdeis/new_pubs/jp6_0.pdf> ;
+        dfo:availability "unavailable" ;
+        dfo:edition "2023 (JEL+)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1b" .
+}
+
+src:LINK16-PUBLIC {
+    src:LINK16-PUBLIC a prov:Entity ;
+        dcterms:identifier "LINK16-PUBLIC" ;
+        dcterms:publisher "various" ;
+        dcterms:title "Link 16 unclassified descriptive literature (JITC/DISA overviews, NATO STANAG 5516 public summaries)" ;
+        dfo:availability "verify-date" ;
+        dfo:edition "n/a" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:MIL-STD-6016 {
+    src:MIL-STD-6016 a prov:Entity ;
+        dcterms:identifier "MIL-STD-6016" ;
+        dcterms:publisher "DISA / JITC" ;
+        dcterms:title "MIL-STD-6016, Tactical Data Link (TDL) 16 Message Standard" ;
+        dfo:availability "unavailable" ;
+        dfo:edition "unknown" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "2" .
+}
+
+src:MIL-STD-6017 {
+    src:MIL-STD-6017 a prov:Entity ;
+        dcterms:identifier "MIL-STD-6017" ;
+        dcterms:publisher "DISA" ;
+        dcterms:title "MIL-STD-6017, Variable Message Format (VMF)" ;
+        dfo:availability "unavailable" ;
+        dfo:edition "unknown" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "2" .
+}
+
+src:MIL-STD-6040 {
+    src:MIL-STD-6040 a prov:Entity ;
+        dcterms:identifier "MIL-STD-6040" ;
+        dcterms:publisher "DISA" ;
+        dcterms:title "MIL-STD-6040, US Message Text Format (USMTF)" ;
+        dfo:availability "unavailable" ;
+        dfo:edition "unknown" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "2" .
+}
+
+src:MIM {
+    src:MIM a prov:Entity ;
+        dcterms:identifier "MIM" ;
+        dcterms:publisher "Multilateral Interoperability Programme" ;
+        dcterms:title "MIP Information Model (MIM) — MIP Baseline 4" ;
+        prov:atLocation <https://www.mimworld.org/portal/projects/welcome/wiki/Introduction> ;
+        dfo:availability "verify-date" ;
+        dfo:edition "current annual increment (2020+)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:MTF-XML {
+    src:MTF-XML a prov:Entity ;
+        dcterms:identifier "MTF-XML" ;
+        dcterms:publisher "DISA" ;
+        dcterms:title "USMTF XML (MTF-XML) schemas" ;
+        dfo:availability "unavailable" ;
+        dfo:edition "unknown" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "2" .
+}
+
+src:NATO-ADATP-3 {
+    src:NATO-ADATP-3 a prov:Entity ;
+        dcterms:identifier "NATO-ADATP-3" ;
+        dcterms:publisher "NATO Standardization Office" ;
+        dcterms:title "ADatP-3, NATO Message Text Formatting System (FORMETS)" ;
+        dfo:availability "verify-availability" ;
+        dfo:edition "unknown" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:NATO-ATDLP-5.16 {
+    src:NATO-ATDLP-5.16 a prov:Entity ;
+        dcterms:identifier "NATO-ATDLP-5.16" ;
+        dcterms:publisher "NATO Standardization Office" ;
+        dcterms:title "ATDLP-5.16, Standard for Tactical Data Link 16" ;
+        dfo:availability "verify-availability" ;
+        dfo:edition "unknown" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:NATO-STANAG-5516 {
+    src:NATO-STANAG-5516 a prov:Entity ;
+        dcterms:identifier "NATO-STANAG-5516" ;
+        dcterms:publisher "NATO Standardization Office" ;
+        dcterms:title "STANAG 5516, Tactical Data Exchange — Link 16" ;
+        dfo:availability "verify-availability" ;
+        dfo:edition "unknown" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:NIEM-6.0 {
+    src:NIEM-6.0 a prov:Entity ;
+        dcterms:identifier "NIEM-6.0" ;
+        dcterms:publisher "OASIS NIEMOpen / NIEM Management Office" ;
+        dcterms:title "NIEM Model 6.0 (OASIS NIEMOpen), incl. Military Operations (MilOps) domain" ;
+        prov:atLocation <https://docs.oasis-open.org/niemopen/niem-model/v6.0/os/xsd/domains/> ;
+        dfo:availability "verified" ;
+        dfo:edition "6.0 OS" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:SYS-DCGS {
+    src:SYS-DCGS a prov:Entity ;
+        dcterms:identifier "SYS-DCGS" ;
+        dcterms:publisher "ACC" ;
+        dcterms:title "AF DCGS — public fact sheets" ;
+        dfo:availability "verify-date" ;
+        dfo:edition "n/a" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:SYS-GCCS-J {
+    src:SYS-GCCS-J a prov:Entity ;
+        dcterms:identifier "SYS-GCCS-J" ;
+        dcterms:publisher "DISA" ;
+        dcterms:title "GCCS-J — public fact sheets" ;
+        dfo:availability "verify-date" ;
+        dfo:edition "n/a" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:SYS-JADOCS {
+    src:SYS-JADOCS a prov:Entity ;
+        dcterms:identifier "SYS-JADOCS" ;
+        dcterms:publisher "US Army / PEO C3T" ;
+        dcterms:title "Joint Automated Deep Operations Coordination System — public fact sheets" ;
+        dfo:availability "verify-date" ;
+        dfo:edition "n/a" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:SYS-KRADOS {
+    src:SYS-KRADOS a prov:Entity ;
+        dcterms:identifier "SYS-KRADOS" ;
+        dcterms:publisher "AFLCMC Detachment 12 (Kessel Run), OpsC2 product line" ;
+        dcterms:title "Kessel Run All-Domain Operations Suite (KRADOS) — AOC Block 20" ;
+        prov:atLocation <https://kesselrun.af.mil/product-lines/OpsC2.html> ;
+        dfo:availability "verified" ;
+        dfo:edition "n/a (continuously delivered; MVCR1 2022)" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}
+
+src:SYS-TBMCS {
+    src:SYS-TBMCS a prov:Entity ;
+        dcterms:identifier "SYS-TBMCS" ;
+        dcterms:publisher "AFLCMC / Kessel Run OpsC2 (sustainment); AppTX migrating 10.1 apps to cloud" ;
+        dcterms:title "Theater Battle Management Core Systems (TBMCS) — AOC Block 10.1" ;
+        prov:atLocation <https://kesselrun.af.mil/product-lines/OpsC2.html> ;
+        dfo:availability "verified" ;
+        dfo:edition "Block 10.1" ;
+        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:sourceTier "1a" .
+}

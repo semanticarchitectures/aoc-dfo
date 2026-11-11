@@ -68,10 +68,15 @@ MODULES: tuple[Module, ...] = (
            "Design-time mission-thread layer: scenarios, transmission steps, channel types, "
            "endpoint roles (design §3.6, R13).",
            ("aoc-flows",)),
+    Module("aoc-prov", "AOC-DFO provenance vocabulary",
+           "Terms that describe source versions (tier, edition, handling caveat, "
+           "supersession). Source versions themselves are prov:Entity records in "
+           "provenance/sources.trig. Imports nothing (Amendment 002).",
+           ()),
     Module("aoc-dfo", "AOC Data Flow Ontology",
            "Top-level module. Imports every core module (design §8).",
-           ("aoc-domain", "aoc-msgstruct", "aoc-messages", "aoc-doctrine", "aoc-flows",
-            "aoc-threads")),
+           ("aoc-prov", "aoc-domain", "aoc-msgstruct", "aoc-messages", "aoc-doctrine",
+            "aoc-flows", "aoc-threads")),
     Module("aoc-align", "AOC-DFO alignment",
            "Alignment axioms to ENSIM, the KB ontology and GMNS. Not imported by any core "
            "module (design §3.7, R14.3).",

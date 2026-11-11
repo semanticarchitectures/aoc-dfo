@@ -22,6 +22,19 @@ default_handling: UNCLASSIFIED
 
 sources:
 
+  # ---------------------------------------------------------------- AOC-DFO's own spec
+  # Terms that exist because the design defines them (provenance vocabulary, structural and
+  # mission-thread classes) cite the approved design by section, e.g. #sec-7.
+  - id: AOC-DFO-DES-1.1
+    title: "AOC-DFO Design Document v1.1"
+    issuer: Semantic Architectures
+    edition: "1.1 (approved 2026-11-11)"
+    issued: "2026-11-11"
+    tier: 1a
+    status: verified
+    url: https://github.com/semanticarchitectures/aoc-dfo/blob/main/.kiro/specs/aoc-dfo/design.md
+    role: authority for terms the design itself defines; anchors are section numbers (sec-7, sec-3.6)
+
   # ---------------------------------------------------------------- USAF doctrine
   - id: AFDP-3-0.1
     title: "AFDP 3-0.1, Command and Control"
