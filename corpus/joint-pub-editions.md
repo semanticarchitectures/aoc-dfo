@@ -1,6 +1,6 @@
 # Public editions of CAC-gated joint publications (task 1.7)
 
-Status: **candidates found 2026-11-11; not yet verified or ingested.** The hosts below are blocked
+Status: **candidates found 2026-11-11; JP 3-30 decided (Amendment 003); none downloaded yet.** The hosts below are blocked
 from the build session, so editions, dates and hashes are from search results, not from the files.
 Each becomes a registry entry (`superseded_by` the current edition) only after its file is
 downloaded, its title page checked, and its SHA-256 recorded.
@@ -30,18 +30,18 @@ Sources: search results 2026-11-11 for each title (links in the table's hosts):
 [irp.fas.org JP 3-01](https://irp.fas.org/doddir/dod/jp3_01.pdf),
 [NPS JP 6-0 2010](https://edocs.nps.edu/dodpubs/topic/jointpubs/JP6/JP6-0_100610.pdf).
 
-## Decision needed (R1.6)
+## Decision (R1.6) — Amendment 003, 2026-11-11
 
-The joint air operations doctrine AOC-DFO most depends on, JP 3-30, has **no official public copy
-newer than 2010**. The registry's working source (JP 3-30, 25 Jul 2019) is on irp.fas.org, which
-R1.6 excludes. Options:
+Kevin chose option 2 for **JP 3-30 only**: the 25 Jul 2019 edition is used from an archive
+(irp.fas.org; CSIS as a second host), with its host, retrieval date, SHA-256 and the caveat
+"archived copy of a publicly released edition; not an official host" recorded on `JP-3-30-2019`
+in the registry and in `provenance/sources.trig`. The registry check rejects any other source on a
+non-official host. The 2010 DTIC edition was the strict alternative and is not used.
 
-1. **Strict R1.6:** use official copies only. JP 3-30 falls back to 2010 (DTIC), 15 years and
-   two editions behind. AFMAN 13-1AOC Vol 3 (2024) and AFDP 3-0.1 (2025) carry most AOC detail
-   anyway.
-2. **Allow archived copies of once-public editions:** accept a non-government archive (FAS, CSIS,
-   GWU) for an edition that was itself publicly released, when the file's title page, date and
-   content can be checked, and record host and SHA-256. Marked `dfo:handlingCaveat` "archived copy,
-   not an official host". Needs R1.6 amended.
+Still undecided: JP 3-09, JP 3-01, JP 2-0 and JP 6-0, whose newest public editions are also only on
+archives. Official-host candidates (JP 3-60 2018 via WHS, JP 3-52 2014 and JP 6-0 2010 via NPS)
+need no amendment.
 
-The registry's `JP-3-30-2019` entry stays as is until this is decided; nothing cites it yet.
+**Download status.** Both archive hosts and the official .mil hosts refuse non-browser clients from
+the build session (HTTP 403, or a 202 challenge page from FAS; CSIS is not on the allowlist). The
+files have to be fetched from a browser and then hashed.

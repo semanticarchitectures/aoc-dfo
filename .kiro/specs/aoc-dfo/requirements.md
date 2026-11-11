@@ -52,7 +52,7 @@ The primary consumers are (a) AKS components and agents that read the shared mod
 3. IF a Tier 1b or Tier 2 source is unavailable THEN the system SHALL record it in the corpus registry with status `unavailable` and SHALL NOT fabricate content attributed to it. *(A001)*
 4. THE corpus registry SHALL include, at minimum, the Tier 1a publications listed in design.md §2.1.
 5. *(A001)* WHERE a public earlier edition substitutes for an unavailable current edition THE system SHALL mark every assertion derived from it with `dfo:supersededBy` the current edition and SHALL list it in the gap report.
-6. *(A001)* THE system SHALL ingest a source only from an official government or standards-body release, and SHALL NOT ingest unofficial mirrors.
+6. *(A001)* THE system SHALL ingest a source only from an official government or standards-body release, and SHALL NOT ingest unofficial mirrors. *(A003: one exception, JP 3-30 25 Jul 2019 from an archive with recorded provenance; see amendments/003.)*
 7. *(A001)* THE system SHALL express the ProvenanceEnvelope in PROV-O, with each source version as a `prov:Entity` in its own named graph, consistent with the umbrella's technology standards.
 
 ### Requirement 2 — Doctrine layer: nodes and processes

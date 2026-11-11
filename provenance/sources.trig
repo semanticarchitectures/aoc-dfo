@@ -289,7 +289,7 @@ src:JP-3-30-2019 {
         prov:atLocation <https://irp.fas.org/doddir/dod/jp3_30.pdf> ;
         dfo:availability "superseded" ;
         dfo:edition "25 Jul 2019" ;
-        dfo:handlingCaveat "UNCLASSIFIED" ;
+        dfo:handlingCaveat "UNCLASSIFIED; archived copy of a publicly released edition; not an official host (Amendment 003)" ;
         dfo:sourceTier "1a" ;
         dfo:supersededBy src:JP-3-30 .
 }

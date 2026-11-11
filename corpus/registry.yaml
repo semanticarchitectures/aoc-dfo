@@ -189,9 +189,15 @@ sources:
     tier: 1a
     status: superseded
     url: https://irp.fas.org/doddir/dod/jp3_30.pdf
+    archive: true
+    handling: "UNCLASSIFIED; archived copy of a publicly released edition; not an official host (Amendment 003)"
     superseded_by: JP-3-30
     role: working source for joint air operations in v1.x (OD-1); every assertion carries dfo:supersededBy JP-3-30
-    notes: "Anchor paragraph numbers will differ from 2025 edition; re-anchor on upgrade."
+    notes: >-
+      Amendment 003: no official public copy newer than 2010 (DTIC ADA513761). Second archive host:
+      https://aerospace.csis.org/wp-content/uploads/2019/09/JointAirOperations_jp3_30.pdf.
+      Before ingest, check the title page (edition, date, distribution statement) and record
+      retrieved and sha256. Anchor paragraph numbers will differ from 2025 edition; re-anchor on upgrade.
 
   - id: JP-3-60
     title: "JP 3-60, Joint Targeting"
