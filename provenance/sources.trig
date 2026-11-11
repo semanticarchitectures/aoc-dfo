@@ -433,11 +433,13 @@ src:NATO-STANAG-5516 {
 src:NIEM-6.0 {
     src:NIEM-6.0 a prov:Entity ;
         dcterms:identifier "NIEM-6.0" ;
+        dcterms:issued "2025-04-29"^^xsd:date ;
         dcterms:publisher "OASIS NIEMOpen / NIEM Management Office" ;
-        dcterms:title "NIEM Model 6.0 (OASIS NIEMOpen), incl. Military Operations (MilOps) domain" ;
-        prov:atLocation <https://docs.oasis-open.org/niemopen/niem-model/v6.0/os/xsd/domains/> ;
+        dcterms:title "NIEM Model 6.0 (OASIS NIEMOpen), Military Operations (mo) and USMTF (usmtf) domains" ;
+        prov:atLocation <https://github.com/niemopen/niem-model/tree/d6e74ac2edf30f5096973c25dbf3c13555466582> ;
+        prov:generatedAtTime "2026-11-11"^^xsd:date ;
         dfo:availability "verified" ;
-        dfo:edition "6.0 OS" ;
+        dfo:edition "6.0 PS02 (Project Specification 02)" ;
         dfo:handlingCaveat "UNCLASSIFIED" ;
         dfo:sourceTier "1a" .
 }

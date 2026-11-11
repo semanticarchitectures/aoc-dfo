@@ -269,14 +269,23 @@ sources:
 
   # ---------------------------------------------------------------- Schemas / models
   - id: NIEM-6.0
-    title: "NIEM Model 6.0 (OASIS NIEMOpen), incl. Military Operations (MilOps) domain"
+    title: "NIEM Model 6.0 (OASIS NIEMOpen), Military Operations (mo) and USMTF (usmtf) domains"
     issuer: OASIS NIEMOpen / NIEM Management Office
-    edition: "6.0 OS"
+    edition: "6.0 PS02 (Project Specification 02)"
+    issued: "2025-04-29"
+    retrieved: "2026-11-11"
     tier: 1a
     status: verified
-    url: https://docs.oasis-open.org/niemopen/niem-model/v6.0/os/xsd/domains/
-    role: PRIMARY canonical element vocabulary (Req 5.1); XSD ingest with element-path anchors
-    notes: "Public MilOps content covers JCA-derived exchanges. Non-public 'MOMS' namespace (DoD Distribution C) is on the WMA portal NIEM Restricted Repository — CAC/PIV; register as NIEM-MOMS tier 2 if obtained. NIEM cited in CJADC2 RA v3.0 and RD v1.0."
+    url: https://github.com/niemopen/niem-model/tree/d6e74ac2edf30f5096973c25dbf3c13555466582
+    role: PRIMARY canonical element vocabulary (R5.1); element tables in catalog/canonical/niem/ with qualified-name anchors
+    notes: >
+      Ingested 2026-11-11 from the official OASIS repo, tag 6.0-ps02 (commit d6e74ac, = main), CSV
+      distribution; hashes in catalog/canonical/niem/MANIFEST.yaml. CC BY 4.0. Both namespaces are
+      Distribution A. The usmtf namespace ("Military Operations subdomain based on USMTF") defines
+      5,719 properties and 5,700 types, all with definitions: public field-level USMTF vocabulary,
+      though not USMTF message-set structure. September's "6.0 OS" edition could not be confirmed
+      (docs.oasis-open.org blocked from this session); PS02 is the newest release in the repo.
+      Non-public DoD Distribution C content (MOMS namespace) remains on the WMA portal (CAC); not used.
 
   - id: MIM
     title: "MIP Information Model (MIM) — MIP Baseline 4"

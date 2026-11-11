@@ -74,6 +74,20 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return 0 if conforms else 1
 
 
+def cmd_ingest(args: argparse.Namespace) -> int:
+    if args.source == "niem":
+        from .ingest import niem
+
+        m = niem.build(niem.fetch())
+        print(f"NIEM {m['tag']} @ {m['commit'][:12]}: {m['row_counts']}")
+    elif args.source == "afman-v3":
+        from .ingest import afman
+
+        m = afman.build(afman.fetch())
+        print(f"{m['source_id']}: {m['counts']}")
+    return 0
+
+
 def cmd_site(args: argparse.Namespace) -> int:
     from pathlib import Path
 
@@ -95,6 +109,9 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("check", help="pins, registry and handling checks").set_defaults(func=cmd_check)
     sub.add_parser("prov", help="regenerate aoc-prov.ttl and provenance/sources.trig").set_defaults(func=cmd_prov)
     sub.add_parser("validate", help="run SHACL provenance shapes").set_defaults(func=cmd_validate)
+    i = sub.add_parser("ingest", help="ingest a registered source into anchored text or tables")
+    i.add_argument("source", choices=["niem", "afman-v3"])
+    i.set_defaults(func=cmd_ingest)
     s = sub.add_parser("site", help="build the GitHub Pages site that w3id IRIs redirect to")
     s.add_argument("--out", default="site")
     s.set_defaults(func=cmd_site)
