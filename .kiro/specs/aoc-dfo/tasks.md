@@ -2,6 +2,7 @@
 
 **Spec ID:** AOC-DFO-TSK
 **Version:** 1.1
+**Status:** Approved (Kevin Kelly, 2026-11-11)
 **Date:** 2026-10-22 (baseline v1.0: 2026-09-04)
 **Traces to:** AOC-DFO-REQ v1.1, AOC-DFO-DES v1.1
 **Repo:** all tasks land in `semanticarchitectures/aoc-dfo` unless marked *(umbrella)*.

@@ -1,6 +1,6 @@
 # Amendment 001 — AKS role, shared pins, OD-1/OD-4, mission-thread layer
 
-- Status: Accepted (requirements v1.1 approved 2026-10-24). Design and tasks v1.1 await approval.
+- Status: Accepted. Requirements v1.1 approved 2026-10-24; design and tasks v1.1 approved 2026-11-11.
 - Amends: AOC-DFO-REQ v1.0, AOC-DFO-DES v1.0, AOC-DFO-TSK v1.0 (all 2026-09-04)
 - Produces: AOC-DFO-REQ v1.1, AOC-DFO-DES v1.1, AOC-DFO-TSK v1.1
 - Umbrella references: [ADR 0005](https://github.com/semanticarchitectures/acquisition-knowledge-system/blob/main/docs/adr/0005-one-model-many-apps.md),

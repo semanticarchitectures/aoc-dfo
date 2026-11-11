@@ -2,6 +2,7 @@
 
 **Spec ID:** AOC-DFO-DES
 **Version:** 1.1
+**Status:** Approved (Kevin Kelly, 2026-11-11)
 **Date:** 2026-10-22 (baseline v1.0: 2026-09-04)
 **Traces to:** AOC-DFO-REQ v1.1
 **Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md)

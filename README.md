@@ -24,7 +24,7 @@ Umbrella steering and ADRs take precedence over anything in this repo. Read the 
 
 ## Status
 
-Phase 0 done. Requirements v1.1 approved 2026-10-24; design and tasks v1.1 pending approval: [requirements](.kiro/specs/aoc-dfo/requirements.md),
+Phase 0 done. Requirements v1.1 approved 2026-10-24; design and tasks v1.1 approved 2026-11-11: [requirements](.kiro/specs/aoc-dfo/requirements.md),
 [design](.kiro/specs/aoc-dfo/design.md), [tasks](.kiro/specs/aoc-dfo/tasks.md),
 [Amendment 001](.kiro/specs/aoc-dfo/amendments/001-aks-role-pins-od1-od4-mission-threads.md).
 The ontology modules are headers only; no classes yet.
