@@ -75,9 +75,8 @@ CI also runs ROBOT (HermiT reasoning and a QC report) with the XML catalog; see
 
 ## Open items
 
-- **Base IRI** `https://w3id.org/aoc-dfo/`: the redirect target is live on GitHub Pages, and the
-  w3id.org request is open as [perma-id/w3id.org#7107](https://github.com/perma-id/w3id.org/pull/7107)
-  (submitted 2026-11-08). The IRIs resolve once it is merged.
+- **Base IRI** `https://w3id.org/aoc-dfo/` resolves (w3id.org [#7107](https://github.com/perma-id/w3id.org/pull/7107)
+  merged; checked 2026-11-11): browsers get the HTML page, RDF clients get Turtle, versioned IRIs work.
 - GMNS's ontology and conformance spec are now public on GMNS branch `specs/python-port`
   (not yet merged). Conformance reconciliation (R6.6) and GMNS alignment start once it is on `main`.
 

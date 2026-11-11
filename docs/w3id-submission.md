@@ -1,6 +1,8 @@
 # Submitting the w3id.org request
 
-**Status:** submitted 2026-11-08 as [perma-id/w3id.org#7107](https://github.com/perma-id/w3id.org/pull/7107),
+**Status:** merged; checked end to end 2026-11-11 (`/ontology`, `/aoc-flows`, `/0.1.0/…`, `.ttl` and the
+root all redirect as designed and land on `200 text/turtle` or `text/html`).
+Submitted 2026-11-08 as [perma-id/w3id.org#7107](https://github.com/perma-id/w3id.org/pull/7107),
 from `semanticarchitectures/w3id.org` branch `aoc-dfo` (commit `705d161`). The Pages target was checked
 live first (`200 text/turtle`). Keep `docs/w3id/` identical to what is merged.
 
