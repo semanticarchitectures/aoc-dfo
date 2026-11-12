@@ -1,0 +1,26 @@
+source_id: AFMAN-13-1AOCV3
+url: https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-1aocv3/afman13-1aocv3_.pdf
+sha256: d96d11dc35eb6ca66b3bbafeef472a25e504b2d022a71ee745cb86ebbc0f99a3
+extractor: pdftotext version 24.02.0 -layout
+built: '2026-11-11'
+counts:
+  abbreviation: 210
+  figure: 11
+  front-matter: 1
+  heading: 11
+  paragraph: 1896
+  reference-list: 2
+  term: 15
+rejected_paragraph_numbers:
+- 'p49: 5.1'
+figures_without_text:
+- fig-2.1
+- fig-2.2
+- fig-2.3
+- fig-2.4
+- fig-3.1
+- fig-5.1
+- fig-5.2
+- fig-6.1
+- fig-7.1
+- fig-9.1

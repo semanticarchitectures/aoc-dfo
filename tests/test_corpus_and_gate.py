@@ -46,7 +46,8 @@ def test_every_citation_in_the_repo_resolves():
 @pytest.mark.parametrize("iri,why", [
     (SOURCE_BASE + "AOC-DFO-DES-1.1#sec-99", "no anchor"),
     (SOURCE_BASE + "NIEM-6.0#usmtf:Invented", "no anchor"),
-    (SOURCE_BASE + "AFMAN-13-1AOCV3#para-1.1", "not ingested"),
+    (SOURCE_BASE + "AFMAN-13-1AOCV3#para-99.1", "no anchor"),
+    (SOURCE_BASE + "JP-3-30-2019#para-1", "not ingested"),
     (SOURCE_BASE + "AOC-DFO-DES-1.1", "is not <"),
     ("https://example.org/doc#p1", "is not <"),
 ])

@@ -1,6 +1,6 @@
 # Public editions of CAC-gated joint publications (task 1.7)
 
-Status: **candidates found 2026-11-11; JP 3-30 decided (Amendment 003); none downloaded yet.** The hosts below are blocked
+Status: **candidates found 2026-11-11; JP 3-30 decided (Amendment 003). JP 3-30 (2019) and JP 3-60 (2018) downloaded, title pages checked, SHA-256 in the registry (2026-11-11); not ingested yet.** The hosts below are blocked
 from the build session, so editions, dates and hashes are from search results, not from the files.
 Each becomes a registry entry (`superseded_by` the current edition) only after its file is
 downloaded, its title page checked, and its SHA-256 recorded.

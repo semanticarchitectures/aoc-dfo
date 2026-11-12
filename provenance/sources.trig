@@ -154,10 +154,13 @@ src:AFMAN-13-1AOCV2 {
 src:AFMAN-13-1AOCV3 {
     src:AFMAN-13-1AOCV3 a prov:Entity ;
         dcterms:identifier "AFMAN-13-1AOCV3" ;
+        dcterms:issued "2024-06-25"^^xsd:date ;
         dcterms:publisher "ACC/A3C (e-Publishing)" ;
         dcterms:title "AFMAN 13-1AOC Vol 3, Operational Procedures—Air Operations Center (AOC)/Operations Center (OC)" ;
         prov:atLocation <https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-1aocv3/afman13-1aocv3_.pdf> ;
+        prov:generatedAtTime "2026-11-11"^^xsd:date ;
         dfo:availability "verified" ;
+        dfo:contentSha256 "d96d11dc35eb6ca66b3bbafeef472a25e504b2d022a71ee745cb86ebbc0f99a3" ;
         dfo:edition "25 Jun 2024" ;
         dfo:handlingCaveat "UNCLASSIFIED" ;
         dfo:sourceTier "1a" .
@@ -284,10 +287,13 @@ src:JP-3-30 {
 src:JP-3-30-2019 {
     src:JP-3-30-2019 a prov:Entity ;
         dcterms:identifier "JP-3-30-2019" ;
+        dcterms:issued "2019-07-25"^^xsd:date ;
         dcterms:publisher "Joint Staff J-7" ;
         dcterms:title "JP 3-30, Joint Air Operations (previous edition)" ;
         prov:atLocation <https://irp.fas.org/doddir/dod/jp3_30.pdf> ;
+        prov:generatedAtTime "2026-11-11"^^xsd:date ;
         dfo:availability "superseded" ;
+        dfo:contentSha256 "9ad5b951d55da1f8306e0b7f1203e070991a1c15010616133c5fdbd53e10eb6a" ;
         dfo:edition "25 Jul 2019" ;
         dfo:handlingCaveat "UNCLASSIFIED; archived copy of a publicly released edition; not an official host (Amendment 003)" ;
         dfo:sourceTier "1a" ;
@@ -316,6 +322,22 @@ src:JP-3-60 {
         dfo:edition "2024 (JEL+)" ;
         dfo:handlingCaveat "UNCLASSIFIED" ;
         dfo:sourceTier "1b" .
+}
+
+src:JP-3-60-2018 {
+    src:JP-3-60-2018 a prov:Entity ;
+        dcterms:identifier "JP-3-60-2018" ;
+        dcterms:issued "2018-09-28"^^xsd:date ;
+        dcterms:publisher "Joint Staff J-7" ;
+        dcterms:title "JP 3-60, Joint Targeting (previous edition)" ;
+        prov:atLocation <https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Joint_Staff/21-F-0520_JP_3-60_9-28-2018.pdf> ;
+        prov:generatedAtTime "2026-11-11"^^xsd:date ;
+        dfo:availability "superseded" ;
+        dfo:contentSha256 "2a2fa51f1376d55d46c2f6767f40b48bfe24f3057bfe8ad038f3bf6dd81ee20e" ;
+        dfo:edition "28 Sep 2018" ;
+        dfo:handlingCaveat "UNCLASSIFIED; DoD FOIA release 21-F-0520 (personal names withheld under (b)(6))" ;
+        dfo:sourceTier "1a" ;
+        dfo:supersededBy src:JP-3-60 .
 }
 
 src:JP-6-0 {
