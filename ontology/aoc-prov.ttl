@@ -1,0 +1,61 @@
+# AOC-DFO — public, unclassified content only (HANDLING.md).
+# Canonical Turtle: format with `uv run aoc-dfo fmt`; CI rejects other layouts.
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dfo: <https://w3id.org/aoc-dfo/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/aoc-dfo/aoc-prov> a owl:Ontology ;
+    rdfs:label "AOC-DFO provenance vocabulary"@en ;
+    dcterms:description "Terms that describe source versions (tier, edition, handling caveat, supersession). Source versions themselves are prov:Entity records in provenance/sources.trig. Imports nothing (Amendment 002)."@en ;
+    dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+    dcterms:source <https://github.com/semanticarchitectures/aoc-dfo> ;
+    dcterms:title "AOC-DFO provenance vocabulary"@en ;
+    rdfs:comment "Public, unclassified content only (HANDLING.md). Upper ontologies at the AKS shared pin: BFO 2020 release-2024-01-29, CCO v2.2."@en ;
+    owl:versionIRI <https://w3id.org/aoc-dfo/0.1.0/aoc-prov> ;
+    owl:versionInfo "0.1.0" .
+
+dfo:availability a owl:DatatypeProperty ;
+    rdfs:label "availability"@en ;
+    dcterms:source <https://w3id.org/aoc-dfo/source/AOC-DFO-DES-1.1#sec-7> ;
+    rdfs:comment "Registry status of a source version, e.g. verified, superseded, unavailable. Content of an unavailable source is never cited."@en ;
+    rdfs:domain prov:Entity ;
+    rdfs:range xsd:string .
+
+dfo:contentSha256 a owl:DatatypeProperty ;
+    rdfs:label "content SHA-256"@en ;
+    dcterms:source <https://w3id.org/aoc-dfo/source/AOC-DFO-DES-1.1#sec-7> ;
+    rdfs:comment "SHA-256 of the retrieved file the corpus text was extracted from."@en ;
+    rdfs:domain prov:Entity ;
+    rdfs:range xsd:string .
+
+dfo:edition a owl:DatatypeProperty ;
+    rdfs:label "edition"@en ;
+    dcterms:source <https://w3id.org/aoc-dfo/source/AOC-DFO-DES-1.1#sec-7> ;
+    rdfs:comment "Edition or version of a source as its issuer states it."@en ;
+    rdfs:domain prov:Entity ;
+    rdfs:range xsd:string .
+
+dfo:handlingCaveat a owl:DatatypeProperty ;
+    rdfs:label "handling caveat"@en ;
+    dcterms:source <https://w3id.org/aoc-dfo/source/AOC-DFO-DES-1.1#sec-7> ;
+    rdfs:comment "Releasability statement for a source version."@en ;
+    rdfs:domain prov:Entity ;
+    rdfs:range xsd:string .
+
+dfo:sourceTier a owl:DatatypeProperty ;
+    rdfs:label "source tier"@en ;
+    dcterms:source <https://w3id.org/aoc-dfo/source/AOC-DFO-DES-1.1#sec-7> ;
+    rdfs:comment "Access tier of a source version: 1a (public), 1b (unclassified but CAC-gated) or 2 (distribution-controlled)."@en ;
+    rdfs:domain prov:Entity ;
+    rdfs:range xsd:string .
+
+dfo:supersededBy a owl:ObjectProperty ;
+    rdfs:label "superseded by"@en ;
+    dcterms:source <https://w3id.org/aoc-dfo/source/AOC-DFO-DES-1.1#sec-7> ;
+    rdfs:comment "Links a source version to the edition that supersedes it."@en ;
+    rdfs:domain prov:Entity ;
+    rdfs:range prov:Entity .

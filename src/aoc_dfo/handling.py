@@ -15,14 +15,18 @@ from . import REPO_ROOT
 PATTERNS = {
     "banner marking": re.compile(
         r"^\s*(TOP SECRET|SECRET|CONFIDENTIAL|CUI)(//[A-Z0-9 ,/\-]+)?\s*$", re.MULTILINE),
-    "portion marking": re.compile(r"\((TS|S|C|CUI|U//FOUO|FOUO)(//[A-Z0-9 ,\-]+)?\)\s+\S"),
+    # A portion marking opens a paragraph or field and precedes a sentence: "(S) The ATO ...".
+    # Prose such as "a single character (C) alphabetic prefix" is not one.
+    "portion marking": re.compile(
+        r"""(?:^|[,"|>\t])[ \t]*\((TS|S|C|CUI|U//FOUO|FOUO)(//[A-Z0-9 ,\-]+)?\)[ \t]+[A-Z]""",
+        re.MULTILINE),
     "FOUO caveat": re.compile(r"FOR OFFICIAL USE ONLY"),
     "restrictive distribution statement": re.compile(r"DISTRIBUTION STATEMENT [B-F]\b"),
     "dissemination control": re.compile(r"//\s*(NOFORN|NF|REL TO|ORCON|PROPIN)\b"),
 }
 
 SKIP_DIRS = {".git", ".venv", "node_modules", "imports", "__pycache__", ".pytest_cache",
-             "reports", "build"}
+             "reports", "build", "cache", "raw", "site"}  # cache/raw/site are gitignored
 TEXT_SUFFIXES = {".md", ".ttl", ".yaml", ".yml", ".csv", ".rq", ".py", ".xml", ".txt", ".toml"}
 # Files that must name the patterns in order to describe them.
 SELF = {Path(__file__).resolve(), (REPO_ROOT / "tests" / "test_handling.py").resolve()}

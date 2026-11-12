@@ -19,3 +19,7 @@ corpus-controlled/
 .vscode/
 catalog-v001.xml.bak
 site/
+
+# Ingest caches (re-fetched from pinned sources)
+corpus/cache/
+corpus/raw/

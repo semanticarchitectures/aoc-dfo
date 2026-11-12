@@ -17,8 +17,11 @@ Instructions for any coding agent working in this repo (Kiro, Claude Code or oth
 - Spec workflow: requirements, then design, then tasks, each approved before the next. Never edit
   `tasks.md` alone. Record scope changes as a numbered amendment.
 - **Public sources only.** Flag gaps; never guess. A missing fact is a one-line open question.
-- **Every assertion carries provenance**: `prov:wasDerivedFrom` a registered source version and a
-  `dfo:anchor`. An uncited class, flow or step is a defect.
+- **Every assertion carries provenance** (Amendment 002): classes and properties cite with
+  `dcterms:source <https://w3id.org/aoc-dfo/source/<id>#<anchor>>`, individuals with
+  `prov:wasDerivedFrom` the same IRI. The source must be ingested and the anchor must exist
+  (`uv run aoc-dfo citations`). Find anchors with the corpus MCP server (`uv run aoc-dfo-mcp`).
+  An uncited class, flow or step is a defect.
 - **CQ gate.** A new class or property names the competency question that needs it.
 - **Never edit `ontology/imports/`.** Pins change in the umbrella's ontology steering first.
 - Ontology files use CCO 2.x IRIs; spec text uses `cco:` label shorthand that must resolve

@@ -11,6 +11,7 @@
     <uri name="https://www.commoncoreontologies.org/2026-08-13/CommonCoreOntologiesMerged" uri="imports/CommonCoreOntologiesMerged.ttl"/>
     <!-- AOC-DFO modules (ontology IRIs). -->
     <uri name="https://w3id.org/aoc-dfo/aoc-dfo" uri="aoc-dfo.ttl"/>
+    <uri name="https://w3id.org/aoc-dfo/aoc-prov" uri="aoc-prov.ttl"/>
     <uri name="https://w3id.org/aoc-dfo/aoc-domain" uri="aoc-domain.ttl"/>
     <uri name="https://w3id.org/aoc-dfo/aoc-msgstruct" uri="aoc-msgstruct.ttl"/>
     <uri name="https://w3id.org/aoc-dfo/aoc-messages" uri="aoc-messages.ttl"/>
