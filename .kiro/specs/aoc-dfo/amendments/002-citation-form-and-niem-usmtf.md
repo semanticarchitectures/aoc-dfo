@@ -1,6 +1,6 @@
 # Amendment 002 — Citation form for classes, provenance module, NIEM USMTF vocabulary
 
-- Status: Proposed (2026-11-11), in the Phase 1 pull request. Takes effect when Kevin approves it.
+- Status: Accepted (2026-11-11, approved by Kevin).
 - Amends: AOC-DFO-REQ v1.1 (R1.2), AOC-DFO-DES v1.1 (§7, §8), AGENTS.md
 - Found while building tasks 1.1 and 1.4.
 
@@ -73,3 +73,4 @@ vocabulary, not USMTF message-set structure. Consequences:
 
 - **OQ-1.** Should the umbrella record B1 as the shared citation form, so the KB cites the same
   way? It affects the shared model, so it is an umbrella decision. Until then it is AOC-DFO's.
+  Raised as umbrella ADR 0011 (proposed 2026-11-11, acquisition-knowledge-system PR #1).

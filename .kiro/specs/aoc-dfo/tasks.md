@@ -6,7 +6,7 @@
 **Date:** 2026-10-22 (baseline v1.0: 2026-09-04)
 **Traces to:** AOC-DFO-REQ v1.1, AOC-DFO-DES v1.1
 **Repo:** all tasks land in `semanticarchitectures/aoc-dfo` unless marked *(umbrella)*.
-**Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md); [002](amendments/002-citation-form-and-niem-usmtf.md) (proposed) — citation form, provenance module, NIEM USMTF vocabulary
+**Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md); [002](amendments/002-citation-form-and-niem-usmtf.md) (accepted 2026-11-11) — citation form, provenance module, NIEM USMTF vocabulary
 
 Conventions: tasks are ordered for execution; `[ ]` incomplete, `[x]` done; each task cites the
 requirements it satisfies. Phases 0–1 are sequential; Phases 2–4 can overlap once their inputs exist;
