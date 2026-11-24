@@ -73,4 +73,4 @@ vocabulary, not USMTF message-set structure. Consequences:
 
 - **OQ-1.** Should the umbrella record B1 as the shared citation form, so the KB cites the same
   way? It affects the shared model, so it is an umbrella decision. Until then it is AOC-DFO's.
-  Raised as umbrella ADR 0011 (proposed 2026-11-11, acquisition-knowledge-system PR #1).
+  Raised as AKS ADR 0015 (proposed 2026-11-11 as 0011, renumbered 2026-11-24; acquisition-knowledge-system PR #1).
