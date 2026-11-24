@@ -51,6 +51,54 @@ def cmd_check(args: argparse.Namespace) -> int:
     return 1 if problems else 0
 
 
+def cmd_prov(args: argparse.Namespace) -> int:
+    """Regenerate ontology/aoc-prov.ttl and provenance/sources.trig from code and registry."""
+    from .modules import BY_NAME
+    from .provenance import vocab_graph, write_sources
+
+    m = BY_NAME["aoc-prov"]
+    g = header_graph(m) + vocab_graph()
+    for prefix, ns in vocab_graph().namespaces():
+        g.bind(prefix, ns)
+    m.path.write_text(canonical_turtle(g), encoding="utf-8")
+    print(f"wrote {m.path.relative_to(REPO_ROOT)}")
+    print(f"wrote {write_sources().relative_to(REPO_ROOT)}")
+    return 0
+
+
+def cmd_validate(args: argparse.Namespace) -> int:
+    from .validate import data_graph, run_shapes
+
+    conforms, _, text = run_shapes(data_graph())
+    print(text if not conforms else "provenance shapes: conforms")
+    return 0 if conforms else 1
+
+
+def cmd_citations(args: argparse.Namespace) -> int:
+    from .citations import catalog_citations, check, rdf_citations
+
+    cites = rdf_citations() + catalog_citations()
+    problems = check(cites)
+    for p in problems:
+        print(p, file=sys.stderr)
+    print(f"{len(cites)} citations, {len(problems)} unresolved")
+    return 1 if problems else 0
+
+
+def cmd_ingest(args: argparse.Namespace) -> int:
+    if args.source == "niem":
+        from .ingest import niem
+
+        m = niem.build(niem.fetch())
+        print(f"NIEM {m['tag']} @ {m['commit'][:12]}: {m['row_counts']}")
+    elif args.source == "afman-v3":
+        from .ingest import afman
+
+        m = afman.build(afman.fetch())
+        print(f"{m['source_id']}: {m['counts']}")
+    return 0
+
+
 def cmd_site(args: argparse.Namespace) -> int:
     from pathlib import Path
 
@@ -70,6 +118,12 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("fmt", help="rewrite ontology/*.ttl in canonical Turtle").set_defaults(func=cmd_fmt)
     sub.add_parser("labelmap", help="regenerate docs/cco-label-map.md").set_defaults(func=cmd_labelmap)
     sub.add_parser("check", help="pins, registry and handling checks").set_defaults(func=cmd_check)
+    sub.add_parser("prov", help="regenerate aoc-prov.ttl and provenance/sources.trig").set_defaults(func=cmd_prov)
+    sub.add_parser("validate", help="run SHACL provenance shapes").set_defaults(func=cmd_validate)
+    sub.add_parser("citations", help="check every citation resolves to an ingested anchor").set_defaults(func=cmd_citations)
+    i = sub.add_parser("ingest", help="ingest a registered source into anchored text or tables")
+    i.add_argument("source", choices=["niem", "afman-v3"])
+    i.set_defaults(func=cmd_ingest)
     s = sub.add_parser("site", help="build the GitHub Pages site that w3id IRIs redirect to")
     s.add_argument("--out", default="site")
     s.set_defaults(func=cmd_site)

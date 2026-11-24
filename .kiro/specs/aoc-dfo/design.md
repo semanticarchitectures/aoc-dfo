@@ -5,7 +5,7 @@
 **Status:** Approved (Kevin Kelly, 2026-11-11)
 **Date:** 2026-10-22 (baseline v1.0: 2026-09-04)
 **Traces to:** AOC-DFO-REQ v1.1
-**Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md)
+**Amendments:** [001](amendments/001-aks-role-pins-od1-od4-mission-threads.md); [002](amendments/002-citation-form-and-niem-usmtf.md) (accepted 2026-11-11) — citation form, provenance module, NIEM USMTF vocabulary
 
 Sections changed by Amendment 001 are marked *(A001)*. Names such as `cco:InformationContentEntity`
 are CCO label shorthand; ontology files use CCO 2.2 IRIs, listed in `docs/cco-label-map.md`.
@@ -196,6 +196,8 @@ Every extraction agent must emit provenance for each row; rows without provenanc
 
 ## 7. Provenance model *(A001)*
 
+> *Amendment 002 (accepted):* classes and properties cite with `dcterms:source <…/source/<id>#<anchor>>`; individuals with `prov:wasDerivedFrom` the same IRI; `dfo:anchor` is dropped; provenance vocabulary lives in module `aoc-prov`. Implemented in Phase 1 (`provenance/sources.trig`, `shapes/provenance.ttl`).
+
 The ProvenanceEnvelope is a required pattern expressed in PROV-O (umbrella tech standard), not a bespoke class:
 
 ```turtle
@@ -241,6 +243,7 @@ Module boundary contract (`owl:imports`, checked in CI):
 
 | Module | May import |
 |---|---|
+| `aoc-prov` *(A002)* | nothing |
 | `aoc-domain` | BFO, CCO |
 | `aoc-msgstruct` | BFO, CCO |
 | `aoc-messages` | `aoc-msgstruct`, `aoc-domain` |

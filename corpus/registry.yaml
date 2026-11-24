@@ -22,6 +22,19 @@ default_handling: UNCLASSIFIED
 
 sources:
 
+  # ---------------------------------------------------------------- AOC-DFO's own spec
+  # Terms that exist because the design defines them (provenance vocabulary, structural and
+  # mission-thread classes) cite the approved design by section, e.g. #sec-7.
+  - id: AOC-DFO-DES-1.1
+    title: "AOC-DFO Design Document v1.1"
+    issuer: Semantic Architectures
+    edition: "1.1 (approved 2026-11-11)"
+    issued: "2026-11-11"
+    tier: 1a
+    status: verified
+    url: https://github.com/semanticarchitectures/aoc-dfo/blob/main/.kiro/specs/aoc-dfo/design.md
+    role: authority for terms the design itself defines; anchors are section numbers (sec-7, sec-3.6)
+
   # ---------------------------------------------------------------- USAF doctrine
   - id: AFDP-3-0.1
     title: "AFDP 3-0.1, Command and Control"
@@ -124,8 +137,14 @@ sources:
     tier: 1a
     status: verified
     url: https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-1aocv3/afman13-1aocv3_.pdf
+    issued: "2024-06-25"
+    retrieved: "2026-11-11"
+    sha256: d96d11dc35eb6ca66b3bbafeef472a25e504b2d022a71ee745cb86ebbc0f99a3
     role: PRIMARY for internal division/team flows and products — 185 pp, no releasability restrictions
-    notes: "Supersedes DAFMAN 13-1AOC V3 (18 Dec 2020). Likely the single richest Tier 1 source for Phase 2/7. Ingest first."
+    notes: >-
+      Supersedes DAFMAN 13-1AOC V3 (18 Dec 2020). Title page checked 2026-11-11: 25 June 2024,
+      "There are no releasability restrictions on this publication", 185 pp. Downloaded by browser
+      (e-Publishing refuses the build session). Ingested to corpus/text/AFMAN-13-1AOCV3 (task 1.3).
 
   - id: AFMAN-13-1AOCV2
     title: "AFMAN 13-1AOC Vol 2, Standardization/Evaluation Program—Air Operations Center (AOC)/Operations Center (OC)"
@@ -176,9 +195,20 @@ sources:
     tier: 1a
     status: superseded
     url: https://irp.fas.org/doddir/dod/jp3_30.pdf
+    archive: true
+    issued: "2019-07-25"
+    retrieved: "2026-11-11"
+    sha256: 9ad5b951d55da1f8306e0b7f1203e070991a1c15010616133c5fdbd53e10eb6a
+    handling: "UNCLASSIFIED; archived copy of a publicly released edition; not an official host (Amendment 003)"
     superseded_by: JP-3-30
     role: working source for joint air operations in v1.x (OD-1); every assertion carries dfo:supersededBy JP-3-30
-    notes: "Anchor paragraph numbers will differ from 2025 edition; re-anchor on upgrade."
+    notes: >-
+      Amendment 003: no official public copy newer than 2010 (DTIC ADA513761). Second archive host:
+      https://aerospace.csis.org/wp-content/uploads/2019/09/JointAirOperations_jp3_30.pdf.
+      Title page checked 2026-11-11: "Joint Publication 3-30, Joint Air Operations, 25 July 2019";
+      PDF metadata title and creation date (31 Jul 2019) agree; 134 pp. No distribution letter on the
+      cover; Appendix "Distribution of Publications" states access to unclassified JPs is unrestricted.
+      Downloaded by browser from irp.fas.org. Anchor paragraph numbers will differ from 2025 edition; re-anchor on upgrade.
 
   - id: JP-3-60
     title: "JP 3-60, Joint Targeting"
@@ -188,6 +218,25 @@ sources:
     status: unavailable
     url: https://jdeis.js.mil/jdeis/new_pubs/jp3_60.pdf
     role: joint targeting cycle, target nomination/JTL/RTL/NSL products, BDA
+
+  - id: JP-3-60-2018
+    title: "JP 3-60, Joint Targeting (previous edition)"
+    issuer: Joint Staff J-7
+    edition: "28 Sep 2018"
+    tier: 1a
+    status: superseded
+    url: https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Joint_Staff/21-F-0520_JP_3-60_9-28-2018.pdf
+    handling: "UNCLASSIFIED; DoD FOIA release 21-F-0520 (personal names withheld under (b)(6))"
+    issued: "2018-09-28"
+    retrieved: "2026-11-11"
+    sha256: 2a2fa51f1376d55d46c2f6767f40b48bfe24f3057bfe8ad038f3bf6dd81ee20e
+    superseded_by: JP-3-60
+    role: working source for joint targeting in v1.x (OD-1); every assertion carries dfo:supersededBy JP-3-60
+    notes: >-
+      Official host (WHS FOIA reading room), so no R1.6 amendment needed. Title page checked
+      2026-11-11: "Joint Publication 3-60, Joint Targeting, 28 September 2018"; 133 pp. A scanned
+      copy with OCR text (OmniPage), so extracted text has OCR errors; ingest must flag them.
+      Downloaded by browser.
 
   - id: JP-3-09
     title: "JP 3-09, Joint Fires"
@@ -256,14 +305,23 @@ sources:
 
   # ---------------------------------------------------------------- Schemas / models
   - id: NIEM-6.0
-    title: "NIEM Model 6.0 (OASIS NIEMOpen), incl. Military Operations (MilOps) domain"
+    title: "NIEM Model 6.0 (OASIS NIEMOpen), Military Operations (mo) and USMTF (usmtf) domains"
     issuer: OASIS NIEMOpen / NIEM Management Office
-    edition: "6.0 OS"
+    edition: "6.0 PS02 (Project Specification 02)"
+    issued: "2025-04-29"
+    retrieved: "2026-11-11"
     tier: 1a
     status: verified
-    url: https://docs.oasis-open.org/niemopen/niem-model/v6.0/os/xsd/domains/
-    role: PRIMARY canonical element vocabulary (Req 5.1); XSD ingest with element-path anchors
-    notes: "Public MilOps content covers JCA-derived exchanges. Non-public 'MOMS' namespace (DoD Distribution C) is on the WMA portal NIEM Restricted Repository — CAC/PIV; register as NIEM-MOMS tier 2 if obtained. NIEM cited in CJADC2 RA v3.0 and RD v1.0."
+    url: https://github.com/niemopen/niem-model/tree/d6e74ac2edf30f5096973c25dbf3c13555466582
+    role: PRIMARY canonical element vocabulary (R5.1); element tables in catalog/canonical/niem/ with qualified-name anchors
+    notes: >
+      Ingested 2026-11-11 from the official OASIS repo, tag 6.0-ps02 (commit d6e74ac, = main), CSV
+      distribution; hashes in catalog/canonical/niem/MANIFEST.yaml. CC BY 4.0. Both namespaces are
+      Distribution A. The usmtf namespace ("Military Operations subdomain based on USMTF") defines
+      5,719 properties and 5,700 types, all with definitions: public field-level USMTF vocabulary,
+      though not USMTF message-set structure. September's "6.0 OS" edition could not be confirmed
+      (docs.oasis-open.org blocked from this session); PS02 is the newest release in the repo.
+      Non-public DoD Distribution C content (MOMS namespace) remains on the WMA portal (CAC); not used.
 
   - id: MIM
     title: "MIP Information Model (MIM) — MIP Baseline 4"

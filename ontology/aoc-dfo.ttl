@@ -17,6 +17,7 @@
         <https://w3id.org/aoc-dfo/aoc-flows>,
         <https://w3id.org/aoc-dfo/aoc-messages>,
         <https://w3id.org/aoc-dfo/aoc-msgstruct>,
+        <https://w3id.org/aoc-dfo/aoc-prov>,
         <https://w3id.org/aoc-dfo/aoc-threads> ;
     owl:versionIRI <https://w3id.org/aoc-dfo/0.1.0/aoc-dfo> ;
     owl:versionInfo "0.1.0" .

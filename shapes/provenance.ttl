@@ -1,0 +1,95 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dfo: <https://w3id.org/aoc-dfo/ontology#> .
+@prefix dfosh: <https://w3id.org/aoc-dfo/shapes/provenance#> .
+
+# ProvenanceEnvelope shapes (R1.2, R1.3, R1.7, R8.6; design §7 as amended by Amendment 002).
+# Data graph: every ontology/*.ttl module (not imports/) merged with provenance/sources.trig.
+
+dfosh:prefixes
+    sh:declare [ sh:prefix "dcterms" ; sh:namespace "http://purl.org/dc/terms/"^^xsd:anyURI ] ,
+               [ sh:prefix "prov" ; sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ] ,
+               [ sh:prefix "dfo" ; sh:namespace "https://w3id.org/aoc-dfo/ontology#"^^xsd:anyURI ] .
+
+# --- Every AOC-DFO class and property cites at least one source, with an anchor --------------
+dfosh:TermCitationShape
+    a sh:NodeShape ;
+    rdfs:comment "Every class or property minted in the dfo: namespace cites a registered, citable source version with an anchor: dcterms:source <https://w3id.org/aoc-dfo/source/<id>#<anchor>>." ;
+    sh:targetClass owl:Class , owl:ObjectProperty , owl:DatatypeProperty , owl:AnnotationProperty ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "AOC-DFO term has no anchored source citation (dcterms:source <…/source/<id>#<anchor>>)." ;
+        sh:prefixes dfosh:prefixes ;
+        sh:select """
+            SELECT $this WHERE {
+              FILTER(STRSTARTS(STR($this), "https://w3id.org/aoc-dfo/ontology#"))
+              FILTER NOT EXISTS {
+                $this dcterms:source ?c .
+                FILTER(STRSTARTS(STR(?c), "https://w3id.org/aoc-dfo/source/"))
+                FILTER(STRLEN(STRAFTER(STR(?c), "#")) > 0)
+              }
+            }""" ;
+    ] , [
+        a sh:SPARQLConstraint ;
+        sh:message "Citation {?value} names a source that is not in the corpus registry." ;
+        sh:prefixes dfosh:prefixes ;
+        sh:select """
+            SELECT $this ?value WHERE {
+              FILTER(STRSTARTS(STR($this), "https://w3id.org/aoc-dfo/ontology#"))
+              $this dcterms:source ?value .
+              FILTER(STRSTARTS(STR(?value), "https://w3id.org/aoc-dfo/source/"))
+              BIND(IRI(IF(CONTAINS(STR(?value), "#"), STRBEFORE(STR(?value), "#"), STR(?value))) AS ?src)
+              FILTER NOT EXISTS { ?src a prov:Entity }
+            }""" ;
+    ] , [
+        a sh:SPARQLConstraint ;
+        sh:message "Citation {?value} names a source whose content is not available (status {?status}); cite nothing from it (R1.3)." ;
+        sh:prefixes dfosh:prefixes ;
+        sh:select """
+            SELECT $this ?value ?status WHERE {
+              FILTER(STRSTARTS(STR($this), "https://w3id.org/aoc-dfo/ontology#"))
+              $this dcterms:source ?value .
+              BIND(IRI(IF(CONTAINS(STR(?value), "#"), STRBEFORE(STR(?value), "#"), STR(?value))) AS ?src)
+              ?src dfo:availability ?status .
+              FILTER(?status IN ("unavailable", "verify-availability"))
+            }""" ;
+    ] .
+
+# --- Individuals (mission-thread steps, instance data) use prov:wasDerivedFrom ---------------
+dfosh:IndividualCitationShape
+    a sh:NodeShape ;
+    rdfs:comment "An individual whose type is an AOC-DFO class cites at least one anchored source version with prov:wasDerivedFrom, unless it is marked synthetic." ;
+    sh:targetClass owl:NamedIndividual ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "AOC-DFO individual has no anchored prov:wasDerivedFrom citation and is not marked dfo:isSynthetic true." ;
+        sh:prefixes dfosh:prefixes ;
+        sh:select """
+            SELECT $this WHERE {
+              $this a ?t . FILTER(STRSTARTS(STR(?t), "https://w3id.org/aoc-dfo/ontology#"))
+              FILTER NOT EXISTS { $this dfo:isSynthetic true }
+              FILTER NOT EXISTS {
+                $this prov:wasDerivedFrom ?c .
+                FILTER(STRSTARTS(STR(?c), "https://w3id.org/aoc-dfo/source/"))
+                FILTER(STRLEN(STRAFTER(STR(?c), "#")) > 0)
+              }
+            }""" ;
+    ] .
+
+# --- Every source version record is complete -------------------------------------------------
+dfosh:SourceVersionShape
+    a sh:NodeShape ;
+    sh:targetClass prov:Entity ;
+    sh:property [ sh:path dcterms:identifier ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ,
+                [ sh:path dcterms:title ; sh:minCount 1 ] ,
+                [ sh:path dfo:edition ; sh:minCount 1 ; sh:maxCount 1 ] ,
+                [ sh:path dfo:sourceTier ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "1a" "1b" "2" ) ] ,
+                [ sh:path dfo:availability ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:in ( "verified" "verify-date" "verify-availability" "superseded" "unavailable" ) ] ,
+                [ sh:path dfo:handlingCaveat ; sh:minCount 1 ] ,
+                [ sh:path dfo:supersededBy ; sh:class prov:Entity ] ,
+                [ sh:path dfo:contentSha256 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] .

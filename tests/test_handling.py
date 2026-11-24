@@ -15,4 +15,9 @@ def test_patterns_catch_markings_but_not_prose():
     assert PATTERNS["banner marking"].search(banner)
     assert PATTERNS["portion marking"].search(portion)
     assert PATTERNS["dissemination control"].search(inline)
+    assert PATTERNS["portion marking"].search('mo:X,"(S) The tasking is')  # start of a CSV field
+    # NIEM prose that mentions a letter or CUI in parentheses is not a marking
+    for text in ("A single character (C) alphabetic prefix.",
+                 "A controlled unclassified information (CUI) handling restriction."):
+        assert not any(p.search(text) for p in PATTERNS.values()), text
     assert not any(p.search(prose) for p in PATTERNS.values())
